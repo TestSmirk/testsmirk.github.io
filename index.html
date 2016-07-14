@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://testsmirk.com"></form>
@@ -63,6 +63,59 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-周末总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/周末总结/" class="article-date">
+  <time datetime="2016-07-14T07:26:54.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/14/周末总结/">周末总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iOS的单例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//Singleton.h</span><br><span class="line">@interface Singleton : NSObject</span><br><span class="line">  + (Singleton *) instance;</span><br><span class="line">@property (nonatomic,strong) NSString *singletonData;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//Singleton.m</span><br><span class="line">#import &quot;Singleton.h&quot;</span><br><span class="line">@implementation Singleton</span><br><span class="line">@synthesize singletonData = _singletonData;</span><br><span class="line">static Singleton *instance =nil;</span><br><span class="line">+ (Singleton *) instance&#123;</span><br><span class="line">  static dispatch_once_t once;</span><br><span class="line">  dispatch_once(&amp;once,^&#123;</span><br><span class="line">  instance = [[self alloc] init];</span><br><span class="line">&#125;);</span><br><span class="line">  return instance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中 <code>static Singleton *instance</code> 为静态变量 ,类方法为 <code>+ (Singleton *) instance</code></p>
+<p>instance 方法采用了 GCD(Grand Central Dispatch)技术,这是一种基于C语言的多线程访问技术,在上述代码中dispatch_once函数就是由GCD提供的.它只执行一次,</p>
+<p><code>stringByAddingPercentEscapesUsingEncoding</code> 转换为 url编码.</p>
+<p>delegate:</p>
+<p>首先声明一个如下.h文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@protocol PhilosopherDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">@required</span><br><span class="line">-(void) sleep;</span><br><span class="line">-(void) eat;</span><br><span class="line">-(void) work;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>然后声明两个 相互依赖的.h.m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;PhilosopherDelegate.h&quot;</span><br><span class="line">@interface Philosopher : NSObject</span><br><span class="line">&#123;</span><br><span class="line">    NSTimer *timer;</span><br><span class="line">    int count;</span><br><span class="line">&#125;</span><br><span class="line">@property (nonatomic,weak) id&lt;PhilosopherDelegate&gt; delegate;</span><br><span class="line">-(void) start;</span><br><span class="line">-(void) handle;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;Philosopher.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation Philosopher</span><br><span class="line">@synthesize delegate;</span><br><span class="line">-(void) start&#123;</span><br><span class="line">    count =0;</span><br><span class="line">    timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(handle) userInfo:nil repeats:YES];</span><br><span class="line">&#125;</span><br><span class="line">-(void)handle&#123;</span><br><span class="line">    switch (count) &#123;</span><br><span class="line">        case 0:</span><br><span class="line">            [self.delegate sleep];</span><br><span class="line">            count++;</span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        case 1:</span><br><span class="line">            [self.delegate eat];</span><br><span class="line">            count++;</span><br><span class="line">            break;</span><br><span class="line">        case 2:</span><br><span class="line">            [self.delegate work];</span><br><span class="line">            [timer invalidate];</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>然后再<code>ViewController</code> 中import,初始化上面相互依赖的.h文件</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line">#import &quot;Philosopher.h&quot;</span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">    Philosopher *obj = [[Philosopher alloc]init];</span><br><span class="line">    obj.delegate = self;</span><br><span class="line">    [obj start];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)didReceiveMemoryWarning &#123;</span><br><span class="line">    [super didReceiveMemoryWarning];</span><br><span class="line">    // Dispose of any resources that can be recreated.</span><br><span class="line">&#125;</span><br><span class="line">-(void) sleep&#123;</span><br><span class="line">    NSLog(@&quot;sleep&quot;);</span><br><span class="line">&#125;</span><br><span class="line">-(void) eat&#123;</span><br><span class="line">    NSLog(@&quot;eat&quot;);</span><br><span class="line">&#125;</span><br><span class="line">-(void) work&#123;</span><br><span class="line">    NSLog(@&quot;work&quot;);</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/07/14/周末总结/" data-id="ciqm8xc61001n0kfjhungktgk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-reset" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -90,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/14/reset/" data-id="ciqlmtd4l001cgcfjfpa4cybs" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/07/14/reset/" data-id="ciqm8xc5n00190kfjlp8mibwz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/13/iOS-someday/" data-id="ciqlmtd40000qgcfj8jaz3z09" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/07/13/iOS-someday/" data-id="ciqm8xc56000r0kfjna9e1hnu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -200,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/12/hello-world/" data-id="ciqlmtd3m000agcfjhifwuft1" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/07/12/hello-world/" data-id="ciqm8xc4s000d0kfj1h3zr2nv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/07/iOS-3/" data-id="ciqlmtd3z000ogcfjzkvuru1m" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/07/07/iOS-3/" data-id="ciqm8xc50000m0kfjnld9a102" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -290,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/06/second-day-iOS/" data-id="ciqlmtd4n001fgcfj3wyw8qx5" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/07/06/second-day-iOS/" data-id="ciqm8xc5s001c0kfjm0m7py9j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -331,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/05/iOS-first-day/" data-id="ciqlmtd3x000kgcfj3pyddsck" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/07/05/iOS-first-day/" data-id="ciqm8xc52000o0kfjarh5ismn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
@@ -382,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/30/MVP/" data-id="ciqlmtd3h0005gcfjvykko2fv" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/30/MVP/" data-id="ciqm8xc4j00040kfjdir1hoqm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li></ul>
@@ -421,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/29/html5/" data-id="ciqlmtd3v000igcfj57fdcxq4" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/29/html5/" data-id="ciqm8xc4y000i0kfj4dg9eipo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
@@ -470,50 +523,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/28/javascript-whatever-day/" data-id="ciqlmtd45000ugcfjrso558yz" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/28/javascript-whatever-day/" data-id="ciqm8xc5a000u0kfjhs5quck7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-javascript-function-and-variable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/27/javascript-function-and-variable/" class="article-date">
-  <time datetime="2016-06-27T10:32:38.000Z" itemprop="datePublished">2016-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/27/javascript-function-and-variable/">javascript function and variable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天去做stackoverflow.com的新手任务,发起了一个<a href="http://stackoverflow.com/questions/38049887/what-about-javascript-in-android/38050076#38050076" target="_blank" rel="external">问题</a> 得到了好多人的回答,也感受到了stackoverflow人民的热情,注册了好久才发现这么一个好地方.问题分类居然细致到ide,顺便回答了几个问题,得到几个勋章,整个人都欢快了好多.</p>
-<p>然后就是全栈之路的下一步H5框架写手机应用…still harding</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/27/javascript-function-and-variable/" data-id="ciqlmtd47000vgcfjy1ct1ts9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 
     </footer>
   </div>
@@ -555,7 +568,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
     </div>
@@ -565,9 +578,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/07/14/周末总结/">周末总结</a>
+          </li>
         
           <li>
             <a href="/2016/07/14/reset/">reset</a>
@@ -583,10 +600,6 @@
         
           <li>
             <a href="/2016/07/07/iOS-3/">iOS 3</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/06/second-day-iOS/">second day iOS</a>
           </li>
         
       </ul>
