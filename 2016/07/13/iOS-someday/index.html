@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS someday | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近学习有点紧张:经过一周的学习,了解到如下几点:
+
+stroyboard,xib,nib都是视图文件,即xml.
+
+storyboard 一个应用中可以有一个storyboard适合一个人开发,不利于团队协作.整体思路清晰,不宜维护.
+xib和可以一个类(暂时还不知道iOS叫啥,Controller?)绑定,也可以作为公共xib.即视图的复用.
+nib.这个听说过没见过,听说是xib的前身.总之">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS someday">
+<meta property="og:url" content="http://yoursite.com/2016/07/13/iOS-someday/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近学习有点紧张:经过一周的学习,了解到如下几点:
+
+stroyboard,xib,nib都是视图文件,即xml.
+
+storyboard 一个应用中可以有一个storyboard适合一个人开发,不利于团队协作.整体思路清晰,不宜维护.
+xib和可以一个类(暂时还不知道iOS叫啥,Controller?)绑定,也可以作为公共xib.即视图的复用.
+nib.这个听说过没见过,听说是xib的前身.总之">
+<meta property="og:updated_time" content="2016-07-14T00:54:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS someday">
+<meta name="twitter:description" content="最近学习有点紧张:经过一周的学习,了解到如下几点:
+
+stroyboard,xib,nib都是视图文件,即xml.
+
+storyboard 一个应用中可以有一个storyboard适合一个人开发,不利于团队协作.整体思路清晰,不宜维护.
+xib和可以一个类(暂时还不知道iOS叫啥,Controller?)绑定,也可以作为公共xib.即视图的复用.
+nib.这个听说过没见过,听说是xib的前身.总之">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-iOS-someday" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/13/iOS-someday/" class="article-date">
+  <time datetime="2016-07-13T07:53:04.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS someday
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近学习有点紧张:经过一周的学习,了解到如下几点:</p>
+<ul>
+<li><p>stroyboard,xib,nib都是视图文件,即xml.</p>
+<ul>
+<li>storyboard 一个应用中可以有一个storyboard适合一个人开发,不利于团队协作.整体思路清晰,不宜维护.</li>
+<li>xib和可以一个类(暂时还不知道iOS叫啥,Controller?)绑定,也可以作为公共xib.即视图的复用.</li>
+<li>nib.这个听说过没见过,听说是xib的前身.总之看着很NB的样子.  </li>
+</ul>
+</li>
+<li><p>.h .m .h常说的头文件?(header?) 不确定所以写上问号.m是实现文件,所有的业务逻辑都卸载这里,当然可以有一些本类已有的变量.公共方法必须在.h文件声明.声明的格式如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (strong, nonatomic) UIWindow *window;</span><br></pre></td></tr></table></figure>
+<p><code>@property</code>是声明关键字@开头,括号里面是 声明的xx忘记了.后面是类型,在后面就是变量.  </p>
+</li>
+</ul>
+<ul>
+<li><p><code>Assets.xcassets</code> 这当时第一眼就知道这里肯定是放图片什么的.因为assets和Android中的一样,此处可以自动生成各种尺寸图片和<a href="http://www.appiconsizes.com/" target="_blank" rel="external">这个</a>类似不过现在可能打不开了?此处不必多说.</p>
+</li>
+<li><p><code>LaunchScreen.storyboard</code>这个顾名思义启动页可以在别处指定<code>.storyboard</code>启动.主要是做一些初始化准备.</p>
+</li>
+<li><p><code>main.m</code> 此处就是在<code>@autoreleasepool</code>中写一个return,目的是为了加载AppDelegate形成各种生命周期.</p>
+</li>
+</ul>
+<p>新建cocoa Touch Class 然后勾选创建xib文件就可以创建一个App页面了.如果要在主页面展示的话,需要在<code>didFinshLaunchingWithOptions</code>方法中加入:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];</span><br><span class="line">    self.window.backgroundColor = [UIColor whiteColor];</span><br><span class="line">    self.viewController = [[ViewController alloc]initWithNibName:@&quot;ViewController&quot; bundle:nil];</span><br><span class="line">    self.window.rootViewController = self.viewController;</span><br><span class="line">    </span><br><span class="line">    [self.window makeKeyAndVisible];</span><br></pre></td></tr></table></figure>
+<p>其中<code>self.viewController</code>xcode7中默认是没有的.需要自己在AppDelegate.h中写出<code>@property (nonatomic,strong) UIViewController *viewController;</code></p>
+<p><code>[[ViewController alloc]initWithNibName:@&quot;ViewController&quot; bundle:nil];</code>就是把xib文件加载出来,</p>
+<p><code>self.window.rootViewController = self.viewController;</code>然后就赋值,最后 让这个window为可见状态.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/13/iOS-someday/" data-id="ciqllwv2v000m38fjjk95ia9o" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/13/iOS-someday/">iOS someday</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/07/iOS-3/">iOS 3</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/second-day-iOS/">second day iOS</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/05/iOS-first-day/">iOS first day</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

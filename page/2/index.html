@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="&#39;html5-day" class="article article-type-&#39;html5" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/day/" class="article-date">
+  <time datetime="2016-06-20T10:19:37.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/day/">day</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>蓄谋好久要了解html5一直都没有腾出时间,(懒)<br>今天看的html引用css使用通配符html代码:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> &gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Smirk's WebSite<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"main.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">name</span>=<span class="string">"tuna"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">name</span>=<span class="string">"sss1111"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">name</span>=<span class="string">"smirk"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css如下:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[name$="11"]</span>&#123;<span class="attribute">color</span>:blue;&#125;<span class="comment">/* ^代表 只要是name的value开始都匹配 $代表 只要是name的value在end都匹配 * 代表无论在任何位置 只要包含都匹配 */</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/20/day/" data-id="ciqllwv2e000738fj8l8u697h" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="&#39;change-default" class="article article-type-&#39;change" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/default/" class="article-date">
+  <time datetime="2016-06-20T07:12:00.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/default/">default</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>o(￣︶￣)n</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/20/default/" data-id="ciqllwv2i000a38fjfmhqlqs8" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theme/">Theme</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-review-java" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/review-java/" class="article-date">
+  <time datetime="2016-06-20T06:22:43.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/review-java/">review java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复习了一下Collection</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Smirk</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Stack&lt;String&gt; stack = <span class="keyword">new</span> Stack&lt;String&gt;();</span><br><span class="line">		stack.push(<span class="string">"this is bottom"</span>);</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.push(<span class="string">"second"</span>);</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.push(<span class="string">"third"</span>);</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.pop();</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.pop();</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.pop();</span><br><span class="line">		print(stack);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Stack&lt;String&gt; stack)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(stack.isEmpty())</span><br><span class="line">			System.out.println(<span class="string">"this stack is empty"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.printf(<span class="string">"%s TOP\n"</span>,stack);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>print<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[this is bottom] TOP</span><br><span class="line">[this is bottom, second] TOP</span><br><span class="line">[this is bottom, second, third] TOP</span><br><span class="line">[this is bottom, second] TOP</span><br><span class="line">[this is bottom] TOP</span><br><span class="line">this stack is empty</span><br></pre></td></tr></table></figure></p>
+<p>浮躁的我们每天去接入不同的第三方,而忽略了本质的细节.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/20/review-java/" data-id="ciqllwv3a001538fjxia81qkw" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-Collections/">java Collections</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-how-fix-65536-error-in-Eclipse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/17/how-fix-65536-error-in-Eclipse/" class="article-date">
+  <time datetime="2016-06-17T11:03:53.000Z" itemprop="datePublished">2016-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/17/how-fix-65536-error-in-Eclipse/">how fix 65536 error in Eclipse</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近项目遇见65536error在Eclipse</p>
+<ol>
+<li>合并jar包用<a href="http://ant.apache.com" target="_blank" rel="external">ant</a> 下载之后可以配置环境变量也可以到ant/bin执行,新建<code>build.xml</code> 内容如下:</li>
+</ol>
+<figure class="highlight plain"><figcaption><span>version=&quot;5.0&quot; encoding=&quot;UTF-8&quot; ?--&gt;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;project name=&quot;HelloWorld&quot; default=&quot;run&quot; basedir=&quot;.&quot;&gt;</span><br><span class="line"> &lt;property name=&quot;src&quot; value=&quot;src&quot;&gt;&lt;/property&gt;</span><br><span class="line"> &lt;property name=&quot;dest&quot; value=&quot;classes&quot;&gt;&lt;/property&gt;</span><br><span class="line"> &lt;property name=&quot;hello_jar&quot; value=&quot;hello1.jar&quot;&gt;&lt;/property&gt;</span><br><span class="line"> &lt;target name=&quot;init&quot;&gt;</span><br><span class="line">     &lt;mkdir dir=&quot;$&#123;dest&#125;&quot;&gt;&lt;/mkdir&gt;</span><br><span class="line"> &lt;/target&gt;</span><br><span class="line"> &lt;target name=&quot;compile&quot; depends=&quot;init&quot;&gt;</span><br><span class="line">     &lt;javac srcdir=&quot;$&#123;src&#125;&quot; destdir=&quot;$&#123;dest&#125;&quot;&gt;&lt;/javac&gt;</span><br><span class="line"> &lt;/target&gt;</span><br><span class="line"> &lt;target name=&quot;build&quot; depends=&quot;compile&quot;&gt;</span><br><span class="line">     &lt;jar jarfile=&quot;$&#123;hello_jar&#125;&quot; basedir=&quot;$&#123;dest&#125;&quot;&gt;&lt;/jar&gt;</span><br><span class="line"> &lt;/target&gt;</span><br><span class="line"> &lt;target name=&quot;run&quot; depends=&quot;build&quot;&gt;</span><br><span class="line">     &lt;java classname=&quot;test.ant.HelloWorld&quot; classpath=&quot;$&#123;hello_jar&#125;&quot;&gt;&lt;/java&gt;</span><br><span class="line"> &lt;/target&gt;</span><br><span class="line"> &lt;target name=&quot;clean&quot;&gt;</span><br><span class="line">     &lt;delete dir=&quot;$&#123;dest&#125;&quot;&gt;&lt;/delete&gt;</span><br><span class="line">     &lt;delete file=&quot;$&#123;hello_jar&#125;&quot;&gt;&lt;/delete&gt;</span><br><span class="line"> &lt;/target&gt;</span><br><span class="line"> &lt;target name=&quot;rerun&quot; depends=&quot;clean,run&quot;&gt;</span><br><span class="line">     &lt;ant target=&quot;clean&quot;&gt;&lt;/ant&gt;</span><br><span class="line">     &lt;ant target=&quot;run&quot;&gt;&lt;/ant&gt;</span><br><span class="line"> &lt;/target&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<p>自动把当前目录下所有的jar打包成一个hello1.jar</p>
+<ol>
+<li>然后到Android SDK 目录build-tools 下找一个比较高版本在当前目录打开cmd 输入<code>dx --dex --output=classes2.dex yourjarname.jar</code>在当前目录就可以看到合并后的jar被转换为<code>.dex</code>文件</li>
+<li>把step2中的.dex文件放到Eclipse的src目录下jar包引用进去.</li>
+<li>下载android.support.Multidex.jar包.(可以通过在Android Studio中引用然后再gradle目录找到this.jar)</li>
+<li>当前Application集成MultiDexApplication用法到<a href="https://developer.android.com/reference/android/support/multidex/MultiDexApplication.html" target="_blank" rel="external">官网</a> 有</li>
+<li>到此就可以运行了.如果出现jumbo错误在project.properties中加入<code>dex.force.jumbo=true</code></li>
+</ol>
+<p>Android Studio MultiDex 地址: <a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">这里</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/17/how-fix-65536-error-in-Eclipse/" data-id="ciqllwv2o000e38fjsvtm3ien" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cent-os-换-ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/06/cent-os-换-ubuntu/" class="article-date">
+  <time datetime="2016-06-06T09:41:19.000Z" itemprop="datePublished">2016-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/06/cent-os-换-ubuntu/">cent os 换 ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>经历的许多终于装上Ubuntu了.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/06/cent-os-换-ubuntu/" data-id="ciqllwv2b000438fjqm2hqpdf" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ubuntu-开启root并打开ssh远程访问" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/06/ubuntu-开启root并打开ssh远程访问/" class="article-date">
+  <time datetime="2016-06-06T03:49:49.000Z" itemprop="datePublished">2016-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/06/ubuntu-开启root并打开ssh远程访问/">ubuntu 开启root并打开ssh远程访问</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先安装</p>
+<p><code>sudo apt-get install openssh-server</code>提示没权限的话就 用root 登陆 su root 如果没有root 就用装完系统的第一个账号登陆 修改root密码 <code>sudo passwd -root</code>然后修改 文件<code>vim /etc/ssh/sshd_config</code>有一行关键字是nopassword 改成<code>yes</code>就好,然后重启ssh</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/06/ubuntu-开启root并打开ssh远程访问/" data-id="ciqllwv3g001f38fjqgvpmtof" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-转-eclipse到androidstudio吐血步骤" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/04/转-eclipse到androidstudio吐血步骤/" class="article-date">
+  <time datetime="2016-06-04T01:54:09.000Z" itemprop="datePublished">2016-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/04/转-eclipse到androidstudio吐血步骤/">转 eclipse到androidstudio吐血步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>打包遇到<code>Error: Expected resource of type styleable [ResourceType]</code>这个异常,起初在stackoverflow上看到<a href="http://stackoverflow.com/questions/36254914/error-expected-resource-of-type-styleable-resourcetype-error" target="_blank" rel="external">这个人说</a> 加上<code>@SuppressWarnings(&quot;ResourceType&quot;)</code>就好了,不知道什么原因,就去看下中文的解释(时间紧迫就没有看英文的解释&gt;_&lt;),<a href="http://www.bozhiyue.com/anroid/wenzhang/2016/0513/97452.html" target="_blank" rel="external">问题的解释就在这</a> …</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/04/转-eclipse到androidstudio吐血步骤/" data-id="ciqllwv3o001j38fj1xriiw2g" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Android-SwipeRefreshLayout-Costom" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/30/Android-SwipeRefreshLayout-Costom/" class="article-date">
+  <time datetime="2016-05-30T10:36:42.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/Android-SwipeRefreshLayout-Costom/">Android SwipeRefreshLayout Costom</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看Android上的demo其中有一个Swipe down中间有一个自定义的SwipeRefreshLayout控制时间的分发,通过遍历寻找可以滑动的View,然后滑动直接return false.代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * Copyright 2014 The Android Open Source Project</span><br><span class="line"> *</span><br><span class="line"> * Licensed under the Apache License, Version 2.0 (the "License");</span><br><span class="line"> * you may not use this file except in compliance with the License.</span><br><span class="line"> * You may obtain a copy of the License at</span><br><span class="line"> *</span><br><span class="line"> *       http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line"> *</span><br><span class="line"> * Unless required by applicable law or agreed to in writing, software</span><br><span class="line"> * distributed under the License is distributed on an "AS IS" BASIS,</span><br><span class="line"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line"> * See the License for the specific language governing permissions and</span><br><span class="line"> * limitations under the License.</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.example.android.swiperefreshmultipleviews;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.support.v4.view.ViewCompat;</span><br><span class="line"><span class="keyword">import</span> android.support.v4.widget.SwipeRefreshLayout;</span><br><span class="line"><span class="keyword">import</span> android.util.AttributeSet;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.AbsListView;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * A descendant of &#123;<span class="doctag">@link</span> android.support.v4.widget.SwipeRefreshLayout&#125; which supports multiple</span><br><span class="line"> * child views triggering a refresh gesture. You set the views which can trigger the gesture via</span><br><span class="line"> * &#123;<span class="doctag">@link</span> #setSwipeableChildren(int...)&#125;, providing it the child ids.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MultiSwipeRefreshLayout</span> <span class="keyword">extends</span> <span class="title">SwipeRefreshLayout</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> View[] mSwipeableChildren;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MultiSwipeRefreshLayout</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MultiSwipeRefreshLayout</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Set the children which can trigger a refresh by swiping down when they are visible. These</span><br><span class="line">     * views need to be a descendant of this view.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSwipeableChildren</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span>... ids)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">assert</span> ids != <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Iterate through the ids and find the Views</span></span><br><span class="line">        mSwipeableChildren = <span class="keyword">new</span> View[ids.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ids.length; i++) &#123;</span><br><span class="line">            mSwipeableChildren[i] = findViewById(ids[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// BEGIN_INCLUDE(can_child_scroll_up)</span></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * This method controls when the swipe-to-refresh gesture is triggered. By returning false here</span><br><span class="line">     * we are signifying that the view is in a state where a refresh gesture can start.</span><br><span class="line">     *</span><br><span class="line">     * &lt;p&gt;As &#123;<span class="doctag">@link</span> android.support.v4.widget.SwipeRefreshLayout&#125; only supports one direct child by</span><br><span class="line">     * default, we need to manually iterate through our swipeable children to see if any are in a</span><br><span class="line">     * state to trigger the gesture. If so we return false to start the gesture.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canChildScrollUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mSwipeableChildren != <span class="keyword">null</span> &amp;&amp; mSwipeableChildren.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// Iterate through the scrollable children and check if any of them can not scroll up</span></span><br><span class="line">            <span class="keyword">for</span> (View view : mSwipeableChildren) &#123;</span><br><span class="line">                <span class="keyword">if</span> (view != <span class="keyword">null</span> &amp;&amp; view.isShown() &amp;&amp; !canViewScrollUp(view)) &#123;</span><br><span class="line">                    <span class="comment">// If the view is shown, and can not scroll upwards, return false and start the</span></span><br><span class="line">                    <span class="comment">// gesture.</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// END_INCLUDE(can_child_scroll_up)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// BEGIN_INCLUDE(can_view_scroll_up)</span></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Utility method to check whether a &#123;<span class="doctag">@link</span> View&#125; can scroll up from it's current position.</span><br><span class="line">     * Handles platform version differences, providing backwards compatible functionality where</span><br><span class="line">     * needed.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">canViewScrollUp</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (android.os.Build.VERSION.SDK_INT &gt;= <span class="number">14</span>) &#123;</span><br><span class="line">            <span class="comment">// For ICS and above we can call canScrollVertically() to determine this</span></span><br><span class="line">            <span class="keyword">return</span> ViewCompat.canScrollVertically(view, -<span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (view <span class="keyword">instanceof</span> AbsListView) &#123;</span><br><span class="line">                <span class="comment">// Pre-ICS we need to manually check the first visible item and the child view's top</span></span><br><span class="line">                <span class="comment">// value</span></span><br><span class="line">                <span class="keyword">final</span> AbsListView listView = (AbsListView) view;</span><br><span class="line">                <span class="keyword">return</span> listView.getChildCount() &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">                        (listView.getFirstVisiblePosition() &gt; <span class="number">0</span></span><br><span class="line">                                || listView.getChildAt(<span class="number">0</span>).getTop() &lt; listView.getPaddingTop());</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// For all other view types we just check the getScrollY() value</span></span><br><span class="line">                <span class="keyword">return</span> view.getScrollY() &gt; <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// END_INCLUDE(can_view_scroll_up)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/30/Android-SwipeRefreshLayout-Costom/" data-id="ciqllwv2l000d38fj1wzctfg0" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lanmp-环境" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/27/lanmp-环境/" class="article-date">
+  <time datetime="2016-05-27T04:59:28.000Z" itemprop="datePublished">2016-05-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/27/lanmp-环境/">lanmp 环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、安装Apahce、PHP、MySQL和PHP连接MySQL数据库的包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd php mysql mysql-server php-mysql</span><br></pre></td></tr></table></figure></p>
+<p>2、安装Apache常用扩展包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd-manual mod_ssl mod_perl mod_auth_mysql</span><br></pre></td></tr></table></figure></p>
+<p>3、安装PHP常用扩展组包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install php-gd php-xml php-mbstring php-ldap php-pear php-xmlrpc php-devel</span><br></pre></td></tr></table></figure></p>
+<p>4、安装MySQL的常用扩展包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-connector-odbc mysql-devel libdbi-dbd-mysql</span><br></pre></td></tr></table></figure></p>
+<p>5、安装Tomcat6相关软件包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tomcat6 tomcat6-webapps tomcat6-admin-webapps tomcat6-docs-webapp tomcat6-javadoc</span><br></pre></td></tr></table></figure></p>
+<p>说明：如果是CentOS 5.x，yum安装的是Tomcat5版本，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tomcat5 tomcat5-webapps tomcat5-admin-webapps tomcat5-docs-webapp tomcat5-javadoc</span><br></pre></td></tr></table></figure></p>
+<p>6、全部软件包一键安装命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd php mysql mysql-server php-mysql httpd-manual mod_ssl mod_perl mod_auth_mysql php-gd php-xml php-mbstring php-ldap php-pear php-xmlrpc php-devel mysql-connector-odbc mysql-devel libdbi-dbd-mysql tomcat6 tomcat6-webapps tomcat6-admin-webapps tomcat6-docs-webapp</span><br></pre></td></tr></table></figure></p>
+<p>7、配置Apache、MySQL、Tomcat服务开机自启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chkconfig httpd on</span><br><span class="line">chkconfig mysqld on</span><br><span class="line">chkconfig tomcat6 on</span><br></pre></td></tr></table></figure>
+<p>8、重启Apache、MySQL、Tomcat服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/httpd restart</span><br><span class="line">/etc/init.d/mysqld restart</span><br><span class="line">/etc/init.d/tomcat6 restart</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>Apache的配置文件是/etc/httpd/conf/里<br>modules放在/usr/lib/httpd/里<br>php的配置文件在/etc/php.d/里和/etc/php.ini<br>php的modules放在/usr/lib/php/modules里<br>MySQL的配置文件在/etc/my.cnf里<br>Tomcat6安装目录位于/user/share/tomcat6/里<br>Tomcat6的配置文件位于/etc/tomcat6/里</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/27/lanmp-环境/" data-id="ciqllwv35000z38fjf5a3w4np" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-tencent-互动直播接入" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/26/tencent-互动直播接入/" class="article-date">
+  <time datetime="2016-05-26T11:39:29.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/26/tencent-互动直播接入/">tencent 互动直播接入</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>需求<br>让本身的应用中具有直播功能并且具有交互.</li>
+<li>过程<br>由于对这方面一点经验都没有,盲目的下demo去看源码,代码写的并没有希望的那样通俗易懂,并且公司总是断网,严重影响心情.</li>
+</ul>
+<ol>
+<li><p>之前Tencent的互动直播sdk是1.7V,然而昨天开始已经1.8(并没有在官网公开只有在<a href="https://github.com/zhaoyang21cn/Android_Suixinbo" target="_blank" rel="external">github</a>)文档从开始就没有特别清晰的思路.</p>
+</li>
+<li><p>其实没有第二点了… </p>
+</li>
+</ol>
+<p>今天深入看了一下安卓的源码,发现直播房间要在自己的服务端维护,Tencent给了一个php的服务端代码,今天把闲置的vps激活,然后装上httpd Apache,php mysql运行了一下效果蛮好,当我在移动端创建房间的时候有不能成功的返回房间id,因为第一次接触php代码,定位问题很慢,找了俩小时,发现不能写入数据到db未完待续.  </p>
+<p>   移动端这边只要调用一些方法,比如<code>enterRoom()</code>,<code>exitRoom()</code>,然后初始化硬件就ok至于登陆的话完全是imsdk.imsdk在这个互动直播sdk中占了很大一部分.<br>   这次集成第三方,真的是考研代码的阅读能力,感觉在这次集成中有了一些小小的进步,也距离自己全栈的路更进一步,</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/26/tencent-互动直播接入/" data-id="ciqllwv3g001b38fjooi5tnb2" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/13/iOS-someday/">iOS someday</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/07/iOS-3/">iOS 3</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/second-day-iOS/">second day iOS</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/05/iOS-first-day/">iOS first day</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android SwipeRefreshLayout Costom | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天看Android上的demo其中有一个Swipe down中间有一个自定义的SwipeRefreshLayout控制时间的分发,通过遍历寻找可以滑动的View,然后滑动直接return false.代码如下:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android SwipeRefreshLayout Costom">
+<meta property="og:url" content="http://yoursite.com/2016/05/30/Android-SwipeRefreshLayout-Costom/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今天看Android上的demo其中有一个Swipe down中间有一个自定义的SwipeRefreshLayout控制时间的分发,通过遍历寻找可以滑动的View,然后滑动直接return false.代码如下:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta property="og:updated_time" content="2016-05-30T10:40:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android SwipeRefreshLayout Costom">
+<meta name="twitter:description" content="今天看Android上的demo其中有一个Swipe down中间有一个自定义的SwipeRefreshLayout控制时间的分发,通过遍历寻找可以滑动的View,然后滑动直接return false.代码如下:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Android-SwipeRefreshLayout-Costom" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/30/Android-SwipeRefreshLayout-Costom/" class="article-date">
+  <time datetime="2016-05-30T10:36:42.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android SwipeRefreshLayout Costom
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看Android上的demo其中有一个Swipe down中间有一个自定义的SwipeRefreshLayout控制时间的分发,通过遍历寻找可以滑动的View,然后滑动直接return false.代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * Copyright 2014 The Android Open Source Project</span><br><span class="line"> *</span><br><span class="line"> * Licensed under the Apache License, Version 2.0 (the "License");</span><br><span class="line"> * you may not use this file except in compliance with the License.</span><br><span class="line"> * You may obtain a copy of the License at</span><br><span class="line"> *</span><br><span class="line"> *       http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line"> *</span><br><span class="line"> * Unless required by applicable law or agreed to in writing, software</span><br><span class="line"> * distributed under the License is distributed on an "AS IS" BASIS,</span><br><span class="line"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line"> * See the License for the specific language governing permissions and</span><br><span class="line"> * limitations under the License.</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.example.android.swiperefreshmultipleviews;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.support.v4.view.ViewCompat;</span><br><span class="line"><span class="keyword">import</span> android.support.v4.widget.SwipeRefreshLayout;</span><br><span class="line"><span class="keyword">import</span> android.util.AttributeSet;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.AbsListView;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * A descendant of &#123;<span class="doctag">@link</span> android.support.v4.widget.SwipeRefreshLayout&#125; which supports multiple</span><br><span class="line"> * child views triggering a refresh gesture. You set the views which can trigger the gesture via</span><br><span class="line"> * &#123;<span class="doctag">@link</span> #setSwipeableChildren(int...)&#125;, providing it the child ids.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MultiSwipeRefreshLayout</span> <span class="keyword">extends</span> <span class="title">SwipeRefreshLayout</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> View[] mSwipeableChildren;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MultiSwipeRefreshLayout</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MultiSwipeRefreshLayout</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Set the children which can trigger a refresh by swiping down when they are visible. These</span><br><span class="line">     * views need to be a descendant of this view.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSwipeableChildren</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span>... ids)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">assert</span> ids != <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Iterate through the ids and find the Views</span></span><br><span class="line">        mSwipeableChildren = <span class="keyword">new</span> View[ids.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ids.length; i++) &#123;</span><br><span class="line">            mSwipeableChildren[i] = findViewById(ids[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// BEGIN_INCLUDE(can_child_scroll_up)</span></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * This method controls when the swipe-to-refresh gesture is triggered. By returning false here</span><br><span class="line">     * we are signifying that the view is in a state where a refresh gesture can start.</span><br><span class="line">     *</span><br><span class="line">     * &lt;p&gt;As &#123;<span class="doctag">@link</span> android.support.v4.widget.SwipeRefreshLayout&#125; only supports one direct child by</span><br><span class="line">     * default, we need to manually iterate through our swipeable children to see if any are in a</span><br><span class="line">     * state to trigger the gesture. If so we return false to start the gesture.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canChildScrollUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mSwipeableChildren != <span class="keyword">null</span> &amp;&amp; mSwipeableChildren.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// Iterate through the scrollable children and check if any of them can not scroll up</span></span><br><span class="line">            <span class="keyword">for</span> (View view : mSwipeableChildren) &#123;</span><br><span class="line">                <span class="keyword">if</span> (view != <span class="keyword">null</span> &amp;&amp; view.isShown() &amp;&amp; !canViewScrollUp(view)) &#123;</span><br><span class="line">                    <span class="comment">// If the view is shown, and can not scroll upwards, return false and start the</span></span><br><span class="line">                    <span class="comment">// gesture.</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// END_INCLUDE(can_child_scroll_up)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// BEGIN_INCLUDE(can_view_scroll_up)</span></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Utility method to check whether a &#123;<span class="doctag">@link</span> View&#125; can scroll up from it's current position.</span><br><span class="line">     * Handles platform version differences, providing backwards compatible functionality where</span><br><span class="line">     * needed.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">canViewScrollUp</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (android.os.Build.VERSION.SDK_INT &gt;= <span class="number">14</span>) &#123;</span><br><span class="line">            <span class="comment">// For ICS and above we can call canScrollVertically() to determine this</span></span><br><span class="line">            <span class="keyword">return</span> ViewCompat.canScrollVertically(view, -<span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (view <span class="keyword">instanceof</span> AbsListView) &#123;</span><br><span class="line">                <span class="comment">// Pre-ICS we need to manually check the first visible item and the child view's top</span></span><br><span class="line">                <span class="comment">// value</span></span><br><span class="line">                <span class="keyword">final</span> AbsListView listView = (AbsListView) view;</span><br><span class="line">                <span class="keyword">return</span> listView.getChildCount() &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">                        (listView.getFirstVisiblePosition() &gt; <span class="number">0</span></span><br><span class="line">                                || listView.getChildAt(<span class="number">0</span>).getTop() &lt; listView.getPaddingTop());</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// For all other view types we just check the getScrollY() value</span></span><br><span class="line">                <span class="keyword">return</span> view.getScrollY() &gt; <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// END_INCLUDE(can_view_scroll_up)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/30/Android-SwipeRefreshLayout-Costom/" data-id="ciqllwv2l000d38fj1wzctfg0" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/04/转-eclipse到androidstudio吐血步骤/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          转 eclipse到androidstudio吐血步骤
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/27/lanmp-环境/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">lanmp 环境</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/13/iOS-someday/">iOS someday</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/07/iOS-3/">iOS 3</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/second-day-iOS/">second day iOS</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/05/iOS-first-day/">iOS first day</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
