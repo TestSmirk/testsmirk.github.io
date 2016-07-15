@@ -39,6 +39,10 @@
         <a href="/" id="logo">Full stack</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Android iOS Html</a>
+        </h2>
+      
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
@@ -63,46 +67,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-javascript-function-and-variable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/27/javascript-function-and-variable/" class="article-date">
-  <time datetime="2016-06-27T10:32:38.000Z" itemprop="datePublished">2016-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/27/javascript-function-and-variable/">javascript function and variable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天去做stackoverflow.com的新手任务,发起了一个<a href="http://stackoverflow.com/questions/38049887/what-about-javascript-in-android/38050076#38050076" target="_blank" rel="external">问题</a> 得到了好多人的回答,也感受到了stackoverflow人民的热情,注册了好久才发现这么一个好地方.问题分类居然细致到ide,顺便回答了几个问题,得到几个勋章,整个人都欢快了好多.</p>
-<p>然后就是全栈之路的下一步H5框架写手机应用…still harding</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/27/javascript-function-and-variable/" data-id="ciqm8xc5c000v0kfjqqp55he5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-javascript-day" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -481,6 +445,57 @@
 
 
   
+    <article id="post-lanmp-环境" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/27/lanmp-环境/" class="article-date">
+  <time datetime="2016-05-27T04:59:28.000Z" itemprop="datePublished">2016-05-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/27/lanmp-环境/">lanmp 环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、安装Apahce、PHP、MySQL和PHP连接MySQL数据库的包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd php mysql mysql-server php-mysql</span><br></pre></td></tr></table></figure></p>
+<p>2、安装Apache常用扩展包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd-manual mod_ssl mod_perl mod_auth_mysql</span><br></pre></td></tr></table></figure></p>
+<p>3、安装PHP常用扩展组包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install php-gd php-xml php-mbstring php-ldap php-pear php-xmlrpc php-devel</span><br></pre></td></tr></table></figure></p>
+<p>4、安装MySQL的常用扩展包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-connector-odbc mysql-devel libdbi-dbd-mysql</span><br></pre></td></tr></table></figure></p>
+<p>5、安装Tomcat6相关软件包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tomcat6 tomcat6-webapps tomcat6-admin-webapps tomcat6-docs-webapp tomcat6-javadoc</span><br></pre></td></tr></table></figure></p>
+<p>说明：如果是CentOS 5.x，yum安装的是Tomcat5版本，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tomcat5 tomcat5-webapps tomcat5-admin-webapps tomcat5-docs-webapp tomcat5-javadoc</span><br></pre></td></tr></table></figure></p>
+<p>6、全部软件包一键安装命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd php mysql mysql-server php-mysql httpd-manual mod_ssl mod_perl mod_auth_mysql php-gd php-xml php-mbstring php-ldap php-pear php-xmlrpc php-devel mysql-connector-odbc mysql-devel libdbi-dbd-mysql tomcat6 tomcat6-webapps tomcat6-admin-webapps tomcat6-docs-webapp</span><br></pre></td></tr></table></figure></p>
+<p>7、配置Apache、MySQL、Tomcat服务开机自启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chkconfig httpd on</span><br><span class="line">chkconfig mysqld on</span><br><span class="line">chkconfig tomcat6 on</span><br></pre></td></tr></table></figure>
+<p>8、重启Apache、MySQL、Tomcat服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/httpd restart</span><br><span class="line">/etc/init.d/mysqld restart</span><br><span class="line">/etc/init.d/tomcat6 restart</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>Apache的配置文件是/etc/httpd/conf/里<br>modules放在/usr/lib/httpd/里<br>php的配置文件在/etc/php.d/里和/etc/php.ini<br>php的modules放在/usr/lib/php/modules里<br>MySQL的配置文件在/etc/my.cnf里<br>Tomcat6安装目录位于/user/share/tomcat6/里<br>Tomcat6的配置文件位于/etc/tomcat6/里</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/05/27/lanmp-环境/" data-id="ciqm8xc5e000x0kfj6t4r2baq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
   <nav id="page-nav">
@@ -541,11 +556,11 @@
           </li>
         
           <li>
-            <a href="/2016/07/12/hello-world/">Hello World</a>
+            <a href="/2016/07/07/iOS-3/">iOS 3</a>
           </li>
         
           <li>
-            <a href="/2016/07/07/iOS-3/">iOS 3</a>
+            <a href="/2016/07/06/second-day-iOS/">second day iOS</a>
           </li>
         
       </ul>
