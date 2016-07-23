@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: test | Full stack</title>
+  <title>weak end at this time | Full stack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今日事今日毕">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Full stack">
-<meta property="og:url" content="http://testsmirk.com/tags/test/index.html">
+  <meta name="description" content="最近在看这本书:其中大多数都是storyboard的视图,而我想用xib还要自己去找xib的方法,就像复用cell的那个方法.storyboard的话不用注册xib.如果xib的话就要在- (UITableViewCell )tableView:(UITableView )tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath方法中给出这一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="weak end at this time">
+<meta property="og:url" content="http://testsmirk.com/2016/07/23/weak-end-at-this-time/index.html">
 <meta property="og:site_name" content="Full stack">
-<meta property="og:description" content="今日事今日毕">
+<meta property="og:description" content="最近在看这本书:其中大多数都是storyboard的视图,而我想用xib还要自己去找xib的方法,就像复用cell的那个方法.storyboard的话不用注册xib.如果xib的话就要在- (UITableViewCell )tableView:(UITableView )tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath方法中给出这一">
+<meta property="og:updated_time" content="2016-07-23T12:38:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Full stack">
-<meta name="twitter:description" content="今日事今日毕">
+<meta name="twitter:title" content="weak end at this time">
+<meta name="twitter:description" content="最近在看这本书:其中大多数都是storyboard的视图,而我想用xib还要自己去找xib的方法,就像复用cell的那个方法.storyboard的话不用注册xib.如果xib的话就要在- (UITableViewCell )tableView:(UITableView )tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath方法中给出这一">
   
     <link rel="alternate" href="/atom.xml" title="Full stack" type="application/atom+xml">
   
@@ -66,39 +67,60 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/28/this-is-test-post/" class="archive-article-date">
-  <time datetime="2016-04-28T04:33:13.000Z" itemprop="datePublished">Apr 28</time>
+        <section id="main"><article id="post-weak-end-at-this-time" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/23/weak-end-at-this-time/" class="article-date">
+  <time datetime="2016-07-23T12:35:28.000Z" itemprop="datePublished">2016-07-23</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/28/this-is-test-post/">this is test post</a>
+    <h1 class="article-title" itemprop="name">
+      weak end at this time
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在看这本书:<ios开发指南：从零基础到app store上架（第3版）完整版="" pdf电子书下载="" 带书签目录.pdf="">其中大多数都是storyboard的视图,而我想用xib还要自己去找xib的方法,就像复用cell的那个方法.storyboard的话不用注册xib.如果xib的话就要在- (UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath方法中给出这一段:</ios开发指南：从零基础到app></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">static BOOL nibsRegistered = NO;</span><br><span class="line"></span><br><span class="line">if(!nibsRegistered)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">UINib *nib = [UINib nibWithNibName:@&quot;TableViewCell&quot; bundle:nil];</span><br><span class="line"></span><br><span class="line">[tableView registerNib:nib forCellReuseIdentifier:@&quot;TableViewCell&quot;];</span><br><span class="line"></span><br><span class="line">nibsRegistered = YES;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>目的是为了注册xib,如果没有注册xib的话.会报错:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /BuildRoot/Library/Caches/com.apple.xbs/Sources/UIKit_Sim/UIKit-3512.29.5/UITableView.m:6547</span><br></pre></td></tr></table></figure>
+<p>吐槽一下xcode的报错,还要自己加上breakpoint,才可以停在有问题的代码上..</p>
+<p>EXC_BAD_ACCESS code = EXC_i386_GPFLT 特么的字符串忘记写@了.真是哔了狗;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to instantiate the default view controller for UIMainStoryboardFile &apos;Main&apos; - perhaps the designated entry point is not set?没有设置 is initial View Controller storyboard;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/07/23/weak-end-at-this-time/" data-id="ciqz5xd9a001p0776xc82hxkj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/19/断网两天记住！/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">断网两天,记住！</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
