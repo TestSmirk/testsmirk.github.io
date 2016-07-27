@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://testsmirk.com"></form>
@@ -67,6 +67,96 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-MVP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/30/MVP/" class="article-date">
+  <time datetime="2016-06-30T06:09:14.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/30/MVP/">MVP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MVP: Model View Presenter.</p>
+<p>从Android的角度去理解:</p>
+<p>新建一个Activity,附加的就有一共5个class&amp;interface.</p>
+<ul>
+<li>View:所有对Activity操作的方法,Activity是被动的.(不会在Activity中对自己做出View的改变)</li>
+</ul>
+<ul>
+<li><p>Presenter: PresenterImpl的interface 主要在Activity中暴漏的,比如需要登陆的时候需要传入username,password,就可以在Presenter中声明回调方法.</p>
+</li>
+<li><p>Model: 登陆的时候在此判断用户名密码.</p>
+</li>
+</ul>
+<p><a href="https://github.com/TestSmirk/MVPDemo" target="_blank" rel="external">demo</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/06/30/MVP/" data-id="cir4fk0000000n4fjq8naszi9" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-html5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/29/html5/" class="article-date">
+  <time datetime="2016-06-29T05:41:02.000Z" itemprop="datePublished">2016-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/29/html5/">html5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天刚好看到html新元素<code>&lt;label &gt;&lt;input type=&quot;date&quot; value=&quot;2016-07-01&quot;&gt;&lt;/label&gt;</code>在ie11中没有效果,去查了一下,IE11在html5发布之前出现的.后来又去试了一下edge浏览器.支持的也不是很好.  非编译语言真的挺好的.不那么吃硬件.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/06/29/html5/" data-id="cir4fk00v000kn4fjnmf6afvk" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-javascript-whatever-day" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -105,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/28/javascript-whatever-day/" data-id="ciqz5xd93001d0776ktuzv8eu" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/28/javascript-whatever-day/" data-id="cir4fk00v000rn4fjhe9jdwp1" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li></ul>
@@ -145,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/27/javascript-function-and-variable/" data-id="ciqz5xd99001o0776hll0kx5t" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/27/javascript-function-and-variable/" data-id="cir4fk00v000un4fjycmnxjnx" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -192,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/25/javascript-day/" data-id="ciqz5xd91001c0776lohi2nzv" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/25/javascript-day/" data-id="cir4fk00v000vn4fjbi1jcxqe" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
@@ -232,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/20/day/" data-id="ciqz5xd87000d0776xqrepgs7" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/20/day/" data-id="cir4fk00f000dn4fjrodvs91g" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
@@ -271,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/20/default/" data-id="ciqz5xd8n000p0776yzvflcgt" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/20/default/" data-id="cir4fk00f000an4fjovqvoeyn" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theme/">Theme</a></li></ul>
@@ -313,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/20/review-java/" data-id="ciqz5xd97001k07762uuno87w" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/20/review-java/" data-id="cir4fk01b001cn4fjju8kiymh" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-Collections/">java Collections</a></li></ul>
@@ -365,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/17/how-fix-65536-error-in-Eclipse/" data-id="ciqz5xd8g000h0776njsdh0xu" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/17/how-fix-65536-error-in-Eclipse/" data-id="cir4fk00v000gn4fjlwg84ny1" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li></ul>
@@ -404,89 +494,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/06/cent-os-换-ubuntu/" data-id="ciqz5xd5s00040776tt0ptuvj" class="article-share-link">Share</a>
+      <a data-url="http://testsmirk.com/2016/06/06/cent-os-换-ubuntu/" data-id="cir4fk00f0005n4fj9b8ot7g3" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ubuntu-开启root并打开ssh远程访问" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/06/ubuntu-开启root并打开ssh远程访问/" class="article-date">
-  <time datetime="2016-06-06T03:49:49.000Z" itemprop="datePublished">2016-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/06/ubuntu-开启root并打开ssh远程访问/">ubuntu 开启root并打开ssh远程访问</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先安装</p>
-<p><code>sudo apt-get install openssh-server</code>提示没权限的话就 用root 登陆 su root 如果没有root 就用装完系统的第一个账号登陆 修改root密码 <code>sudo passwd -root</code>然后修改 文件<code>vim /etc/ssh/sshd_config</code>有一行关键字是nopassword 改成<code>yes</code>就好,然后重启ssh</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/06/ubuntu-开启root并打开ssh远程访问/" data-id="ciqz5xd9g001v0776cmz0gx57" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-转-eclipse到androidstudio吐血步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/04/转-eclipse到androidstudio吐血步骤/" class="article-date">
-  <time datetime="2016-06-04T01:54:09.000Z" itemprop="datePublished">2016-06-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/04/转-eclipse到androidstudio吐血步骤/">转 eclipse到androidstudio吐血步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>打包遇到<code>Error: Expected resource of type styleable [ResourceType]</code>这个异常,起初在stackoverflow上看到<a href="http://stackoverflow.com/questions/36254914/error-expected-resource-of-type-styleable-resourcetype-error" target="_blank" rel="external">这个人说</a> 加上<code>@SuppressWarnings(&quot;ResourceType&quot;)</code>就好了,不知道什么原因,就去看下中文的解释(时间紧迫就没有看英文的解释&gt;_&lt;),<a href="http://www.bozhiyue.com/anroid/wenzhang/2016/0513/97452.html" target="_blank" rel="external">问题的解释就在这</a> …</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/04/转-eclipse到androidstudio吐血步骤/" data-id="ciqz5xdb6002g0776r8629yo7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li></ul>
 
     </footer>
   </div>
@@ -509,7 +520,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsock-install/">shadowsock install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
     </div>
@@ -519,9 +530,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 10px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
+      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 15px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
     </div>
   </div>
 
@@ -538,9 +549,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/07/27/xcode在非Application路径安装插件/">xcode在非Application路径安装插件</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/26/kind-of-probrems/">kind of probrems</a>
+          </li>
         
           <li>
             <a href="/2016/07/23/weak-end-at-this-time/">weak end at this time</a>
@@ -552,14 +571,6 @@
         
           <li>
             <a href="/2016/07/14/周末总结/">周末总结</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/14/reset/">reset</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/13/iOS-someday/">iOS someday</a>
           </li>
         
       </ul>
@@ -575,7 +586,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 TestSmirk 京ICP备16028080号<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
