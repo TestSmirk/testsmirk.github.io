@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android N | Full stack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android N for DeveloperAndroid N is still in active development, but you can try it now as part of the N Developer Preview. The sections below highlight some of the new features for developers.
+Make s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android N">
+<meta property="og:url" content="http://testsmirk.com/2016/04/28/Android-N/index.html">
+<meta property="og:site_name" content="Full stack">
+<meta property="og:description" content="Android N for DeveloperAndroid N is still in active development, but you can try it now as part of the N Developer Preview. The sections below highlight some of the new features for developers.
+Make s">
+<meta property="og:image" content="https://developer.android.com/preview/images/notifications-1.png">
+<meta property="og:image" content="https://developer.android.com/preview/images/notifications-3.png">
+<meta property="og:image" content="https://developer.android.com/preview/images/notifications-2.png">
+<meta property="og:updated_time" content="2016-05-23T04:51:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android N">
+<meta name="twitter:description" content="Android N for DeveloperAndroid N is still in active development, but you can try it now as part of the N Developer Preview. The sections below highlight some of the new features for developers.
+Make s">
+<meta name="twitter:image" content="https://developer.android.com/preview/images/notifications-1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Full stack" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Full stack</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Android iOS Html</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://testsmirk.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Android-N" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/28/Android-N/" class="article-date">
+  <time datetime="2016-04-28T04:39:51.000Z" itemprop="datePublished">2016-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android N
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Android-N-for-Developer"><a href="#Android-N-for-Developer" class="headerlink" title="Android N for Developer"></a>Android N for Developer</h1><p>Android N is still in active development, but you can try it now as part of the N Developer Preview. The sections below highlight some of the new features for developers.</p>
+<p>Make sure to check out the <a href="http://developer.android.com/preview/behavior-changes.html" target="_blank" rel="external">Behavior Changes</a> to learn about areas where platform changes may affect your apps, take a look at the developer guides to learn more about key features, and download the <a href="http://developer.android.com/preview/setup-sdk.html#docs-dl" target="_blank" rel="external">API Reference</a> for details on new APIs.</p>
+<h2 id="Multi-window-support"><a href="#Multi-window-support" class="headerlink" title="Multi-window support"></a>Multi-window support</h2><hr>
+<p>In Android N, we’re introducing a new and much-requested multitasking feature into the platform — multi-window support.</p>
+<p>Users can now pop open two apps on the screen at once.</p>
+<ul>
+<li>On phones and tablets running Android N, users can run two apps side-by-side or one-above-the-other in splitscreen mode. Users can resize the apps by dragging the divider between them.</li>
+<li>On Android TV devices, apps can put themselves in <a href="http://developer.android.com/preview/features/picture-in-picture.html" target="_blank" rel="external">picture-in-picture mode</a>, allowing them to continue showing content while the user browses or interacts with other apps.</li>
+</ul>
+<p><strong>Figure 1.</strong> Apps running in split-screen mode.</p>
+<p>Especially on tablets and other larger-screen devices, multi-window support gives you new ways to engage users. You can even enable drag-and-drop in your app to let users conveniently drag content to or from your app — a great way to enhance your user experience.</p>
+<p>It’s straightforward to add multi-window support to your app and configure how it handles multi-window display. For example, you can specify your activity’s minimum allowable dimensions, preventing users from resizing the activity below that size. You can also disable multi-window display for your app, which ensures that the system will only show your app in full-screen mode.</p>
+<p>For more information, see the <a href="http://developer.android.com/preview/features/multi-window.html" target="_blank" rel="external">Multi-Window Support</a> developer documentation.</p>
+<h2 id="Notification-enhancements"><a href="#Notification-enhancements" class="headerlink" title="Notification enhancements"></a>Notification enhancements</h2><hr>
+<p>In Android N we’ve redesigned notifications to make them easier and faster to use. Some of the changes include:</p>
+<ul>
+<li><strong>Template updates</strong>: We’re updating notification templates to put a new emphasis on hero image and avatar. Developers will be able to take advantage of the new templates with minimal adjustments in their code.</li>
+<li><strong>Bundled notifications</strong>: The system can group messages together, for example by message topic, and display the group. A user can take actions, such as Dismiss or Archive, on them in place. If you’ve implemented notifications for Android Wear, you’ll already be familiar with this model.</li>
+<li><strong>Direct reply</strong>: For real-time communication apps, the Android system supports inline replies so that users can quickly respond to an SMS or text message directly within the notification interface.</li>
+<li><strong>Custom views</strong>: Two new APIs enable you to leverage system decorations, such as notification headers and actions, when using custom views in notifications.</li>
+</ul>
+<p><img src="https://developer.android.com/preview/images/notifications-1.png" alt=""></p>
+<p><img src="https://developer.android.com/preview/images/notifications-3.png" alt=""></p>
+<p><img src="https://developer.android.com/preview/images/notifications-2.png" alt=""></p>
+<p><strong>Figure 2.</strong> Bundled notifications and direct reply.</p>
+<p>To learn how to implement the new features, see the <a href="http://developer.android.com/preview/features/notification-updates.html" target="_blank" rel="external">Notifications</a> guide.</p>
+<h2 id="Profile-guided-JIT-AOT-compilation"><a href="#Profile-guided-JIT-AOT-compilation" class="headerlink" title="Profile-guided JIT/AOT compilation"></a>Profile-guided JIT/AOT compilation</h2><hr>
+<p>In Android N, we’ve added a Just in Time (JIT) compiler with code profiling to ART, which lets it constantly improve the performance of Android apps as they run. The JIT compiler complements ART’s current Ahead of Time (AOT) compiler and helps improve runtime performance, save storage space, and speed up app updates and system updates.</p>
+<p>Profile-guided compilation lets ART manage the AOT/JIT compilation for each app according to its actual usage, as well as conditions on the device. For example, ART maintains a profile of each app’s hot methods and can precompile and cache those methods for best performance. It leaves other parts of the app uncompiled until they are actually used.</p>
+<p>Besides improving performance for key parts of the app, profile-guided compilation helps reduce an app’s overall RAM footprint, including associated binaries. This feature is especially important on low-memory devices.</p>
+<p>ART manages profile-guided compilation in a way that minimizes impact on the device battery. It does precompilation only when then the device is idle and charging, saving time and battery by doing that work in advance.</p>
+<h2 id="Quick-path-to-app-install"><a href="#Quick-path-to-app-install" class="headerlink" title="Quick path to app install"></a>Quick path to app install</h2><hr>
+<p>One of the most tangible benefits of ART’s JIT compiler is the speed of app installs and system updates. Even large apps that required several minutes to optimize and install in Android 6.0 can now install in just a matter of seconds. System updates are also faster, since there’s no more optimizing step.</p>
+<h2 id="Doze-on-the-go…"><a href="#Doze-on-the-go…" class="headerlink" title="Doze on the go…"></a>Doze on the go…</h2><hr>
+<p>Android 6.0 introduced Doze, a system mode that saves battery by deferring apps’ CPU and network activities when the device is idle, such as when it’s sitting on a table or in a drawer.</p>
+<p>Now in Android N, Doze takes a step further and saves battery while on the go. Any time the screen is off for a period of time and the device is unplugged, Doze applies a subset of the familiar CPU and network restrictions to apps. This means users can save battery even when carrying their devices in their pockets.</p>
+<p><strong>Figure 3.</strong> Doze now applies restrictions to improve battery life even when the device is not stationary.</p>
+<p>A short time after the screen turns off while the device is on battery, Doze restricts network access and defers jobs and syncs. During brief maintenance windows, applications are allowed network access and any of their deferred jobs/syncs are executed. Turning the screen on or plugging in the device brings the device out of Doze.</p>
+<p>When the device is stationary again, with screen off and on battery for a period of time, Doze applies the full CPU and network restrictions on <code>PowerManager.WakeLock</code>, <code>AlarmManager</code> alarms, and GPS/Wi-Fi scans.</p>
+<p>The best practices for adapting your app to Doze are the same whether the device is moving or not, so if you already updated your app to gracefully handle Doze, you’re all set. If not, start <a href="http://developer.android.com/training/monitoring-device-state/doze-standby.html#assessing_your_app" target="_blank" rel="external">adapting your app to Doze</a> now.</p>
+<h2 id="Project-Svelte-Background-optimizations"><a href="#Project-Svelte-Background-optimizations" class="headerlink" title="Project Svelte: Background optimizations"></a>Project Svelte: Background optimizations</h2><hr>
+<p>Project Svelte is an ongoing effort to minimize RAM use by system and apps across the range of Android devices in the ecosystem. In Android N, Project Svelte is focused on optimizing the way apps run in the background.</p>
+<p>Background processing is an essential part of most apps. When handled right, it can make your user experience amazing — immediate, fast, and context-aware. When not handled right, background processing can needlessly consume RAM (and battery) and affect system performance for other apps.</p>
+<p>Since Android 5.0, <code>JobScheduler</code> has been the preferred way of performing background work in a way that’s good for users. Apps can schedule jobs while letting the system optimize based on memory, power, and connectivity conditions. JobScheduler offers control and simplicity, and we want all apps to use it.</p>
+<p>Another good option is <a href="https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmNetworkManager" target="_blank" rel="external"><code>GCMNetworkManager</code></a>, part of Google Play Services, which offers similar job scheduling with compatibility across legacy versions of Android.</p>
+<p>We’re continuing to extend <code>JobScheduler</code> and <code>GCMNetworkManager</code> to meet more of your use cases — for example, in Android N you can now schedule background work based on changes in Content Providers. At the same time we’re starting to deprecate some of the older patterns that can reduce system performance, especially on low-memory devices.</p>
+<p>In Android N we’re removing three commonly-used implicit broadcasts — <code>CONNECTIVITY_ACTION</code>,<code>ACTION_NEW_PICTURE</code>, and <code>ACTION_NEW_VIDEO</code> — since those can wake the background processes of multiple apps at once and strain memory and battery. If your app is receiving these, take advantage of the N Developer Preview to migrate to <code>JobScheduler</code> and related APIs instead.</p>
+<p>Take a look at the <a href="http://developer.android.com/preview/features/background-optimization.html" target="_blank" rel="external">Background Optimizations</a> documentation for details.</p>
+<h2 id="Data-Saver"><a href="#Data-Saver" class="headerlink" title="Data Saver"></a>Data Saver</h2><hr>
+<p><strong>Figure 4.</strong> Data Saver in Settings.</p>
+<p>Over the life of a mobile device, the cost of a cellular data plan typically exceeds the cost of the device itself. For many users, cellular data is an expensive resource that they want to conserve.</p>
+<p>Android N introduces Data Saver mode, a new system service that helps reduce cellular data use by apps, whether roaming, near the end of the billing cycle, or on a small prepaid data pack. Data Saver gives users control over how apps use cellular data and lets developers provide more efficient service when Data Saver is on.</p>
+<p>When a user enables Data Saver in <strong>Settings</strong> and the device is on a metered network, the system blocks background data usage and signals apps to use less data in the foreground wherever possible — such as by limiting bit rate for streaming, reducing image quality, deferring optimistic precaching, and so on. Users can whitelist specific apps to allow background metered data usage even when Data Saver is turned on.</p>
+<p>Android N extends the <code>ConnectivityManager</code> to provide apps a way to <a href="http://developer.android.com/preview/features/data-saver.html#status" target="_blank" rel="external">retrieve the user’s Data Saver preferences</a> and <a href="http://developer.android.com/preview/features/data-saver.html#monitor-changes" target="_blank" rel="external">monitor preference changes</a>. All apps should check whether the user has enabled Data Saver and make an effort to limit foreground and background data usage.</p>
+<h2 id="Vulkan-API"><a href="#Vulkan-API" class="headerlink" title="Vulkan API"></a>Vulkan API</h2><hr>
+<p>Android N integrates <a href="http://www.khronos.org/vulkan" target="_blank" rel="external">Vulkan™</a>, a new 3D rendering API, into the platform. Like <a href="https://www.khronos.org/opengles/" target="_blank" rel="external">OpenGL™ ES</a>, Vulkan is an open standard for 3D graphics and rendering maintained by the Khronos Group.</p>
+<p>Vulkan is designed from the ground up to minimize CPU overhead in the driver, and allow your application to control GPU operation more directly. Vulkan also enables better parallelization by allowing multiple threads to perform work such as command buffer construction at once.</p>
+<p>Vulkan development tools and libraries are rolled into the Android NDK. They include:</p>
+<ul>
+<li>Headers</li>
+<li>Validation layers (debug libraries)</li>
+<li>SPIR-V shader compiler</li>
+<li>SPIR-V runtime shader compilation library</li>
+</ul>
+<p>Vulkan is only available to apps on devices with Vulkan-capable hardware, such as Nexus 5X and Nexus 6P. We’re working closely with our partners to bring Vulkan to more devices as soon as possible.</p>
+<p>For more information, see the the <a href="http://developer.android.com/ndk/guides/graphics/index.html" target="_blank" rel="external">API documentation</a>.</p>
+<h2 id="Quick-Settings-Tile-API"><a href="#Quick-Settings-Tile-API" class="headerlink" title="Quick Settings Tile API"></a>Quick Settings Tile API</h2><hr>
+<p><strong>Figure 5.</strong> Quick Settings tiles in the notification shade.</p>
+<p>Quick Settings is a popular and simple way to expose key settings and actions, directly from the notification shade. In Android N, we’ve expanded the scope of Quick Settings to make it even more useful and convenient.</p>
+<p>We’ve added more room for additional Quick Settings tiles, which users can access across a paginated display area by swiping left or right. We’ve also given users control over what Quick Settings tiles appear and where they are displayed — users can add or move tiles just by dragging and dropping them.</p>
+<p>For developers, Android N also adds a new API that lets you define your own Quick Settings tiles to give users easy access to key controls and actions in your app.</p>
+<p>Quick Settings tiles are reserved for controls or actions that are either urgently required or frequently used, and should not be used as shortcuts to launching an app.</p>
+<p>Once you’ve defined your tiles, you can surface them to users, who can add them to Quick Settings just by drag and drop.</p>
+<p>For information about creating an app tile, see the <code>android.service.quicksettings.Tile</code> in the downloadable<a href="http://developer.android.com/preview/setup-sdk.html#docs-dl" target="_blank" rel="external">API Reference</a>.</p>
+<h2 id="Number-blocking"><a href="#Number-blocking" class="headerlink" title="Number-blocking"></a>Number-blocking</h2><hr>
+<p>Android N now supports number-blocking in the platform and provides a framework API to let service providers maintain a blocked-number list. The default SMS app, the default phone app, and carrier apps can read from and write to the blocked-number list. The list is not accessible to other apps.</p>
+<p>By making number-blocking a standard feature of the platform, Android provides a consistent way for apps to support number-blocking across a wide range of devices. Among the other benefits that apps can take advantage of are:</p>
+<ul>
+<li>Numbers blocked on calls are also blocked on texts</li>
+<li>Blocked numbers can persist across resets and devices through the Backup &amp; Restore feature</li>
+<li>Multiple apps can use the same blocked numbers list</li>
+</ul>
+<p>Additionally, carrier app integration through Android means that carriers can read the blocked numbers list on the device and perform service-side blocking for the user in order to stop unwanted calls and texts from reaching the user through any medium, such as a VOIP endpoint or forwarding phones.</p>
+<p>For more information, see <code>android.provider.BlockedNumberContract</code> in the downloadable <a href="http://developer.android.com/preview/setup-sdk.html#docs-dl" target="_blank" rel="external">API Reference</a>.</p>
+<h2 id="Call-screening"><a href="#Call-screening" class="headerlink" title="Call screening"></a>Call screening</h2><hr>
+<p>Android N allows the default phone app to screen incoming calls. The phone app does this by implementing the new <code>CallScreeningService</code>, which allows the phone app to perform a number of actions based on an incoming call’s <code>Call.Details</code>, such as:</p>
+<ul>
+<li>Reject the incoming call</li>
+<li>Do not allow the call to the call log</li>
+<li>Do not show the user a notification for the call</li>
+</ul>
+<p>For more information, see <code>android.telecom.CallScreeningService</code> in the downloadable <a href="http://developer.android.com/preview/setup-sdk.html#docs-dl" target="_blank" rel="external">API Reference</a>.</p>
+<h2 id="Multi-locale-support-more-languages"><a href="#Multi-locale-support-more-languages" class="headerlink" title="Multi-locale support, more languages"></a>Multi-locale support, more languages</h2><hr>
+<p>Android N now lets users select <strong>multiple locales</strong> in Settings, to better support bilingual use-cases. Apps can use a new API to get the user’s selected locales and then offer more sophisticated user experiences for multi-locale users — such as showing search results in multiple languages and not offering to translate webpages in a language the user already knows.</p>
+<p>Along with multi-locale support, Android N also expands the range of languages available to users. It offers more than 25 variants each for commonly used languages such as English, Spanish, French, and Arabic. It also adds partial support for more than 100 new languages.</p>
+<p>Apps can get the list of locales set by the user by calling <code>LocaleList.GetDefault()</code>. To support the expanded number of locales, Android N is changing the way that it resolves resources. Make sure that you test and verify that your apps working as expected with the new resource resolution logic.</p>
+<p>To learn about the new resource-resolution behavior and the best practices you should follow, see <a href="http://developer.android.com/preview/features/multilingual-support.html" target="_blank" rel="external">Multilingual Support</a>.</p>
+<h2 id="ICU4J-APIs-in-Android"><a href="#ICU4J-APIs-in-Android" class="headerlink" title="ICU4J APIs in Android"></a>ICU4J APIs in Android</h2><hr>
+<p>Android N now offers a subset of <a href="http://site.icu-project.org/" target="_blank" rel="external">ICU4J</a> APIs in the Android framework under the <code>android.icu</code> package. Migration is easy, and mostly entails simply changing from the <code>com.java.icu</code> namespace to <code>android.icu</code>. If you are already using an ICU4J bundle in your apps, switching to the <code>android.icu</code> APIs provided in the Android framework can produce substantial savings in APK size.</p>
+<p>To learn more about the Android ICU4J APIs, see <a href="http://developer.android.com/preview/features/icu4j-framework.html" target="_blank" rel="external">ICU4J Support</a>.</p>
+<h2 id="OpenGL™-ES-3-2-API"><a href="#OpenGL™-ES-3-2-API" class="headerlink" title="OpenGL™ ES 3.2 API"></a>OpenGL™ ES 3.2 API</h2><hr>
+<p>Android N adds framework interfaces and platform support for OpenGL ES 3.2, including:</p>
+<ul>
+<li>All extensions from the <a href="https://www.khronos.org/registry/gles/extensions/ANDROID/ANDROID_extension_pack_es31a.txt" target="_blank" rel="external">Android Extension Pack</a> (AEP) except for <code>EXT_texture_sRGB_decode</code>.</li>
+<li>Floating-point framebuffers for HDR and deferred shading.</li>
+<li>BaseVertex draw calls to enable better batching and streaming.</li>
+<li>Robust buffer access control to reduce WebGL overhead.</li>
+</ul>
+<p>The framework API for OpenGL ES 3.2 on Android N is provided with the <code>GLES32</code> class. When using OpenGL ES 3.2, be sure to declare the requirement in your manifest file, using the <code>` tag and the</code>android:glEsVersion` attribute.</p>
+<p>For information about using OpenGL ES, including how to check a device’s supported OpenGL ES version at runtime, see the <a href="http://developer.android.com/guide/topics/graphics/opengl.html" target="_blank" rel="external">OpenGL ES API guide</a>.</p>
+<h2 id="Android-TV-recording"><a href="#Android-TV-recording" class="headerlink" title="Android TV recording"></a>Android TV recording</h2><hr>
+<p>Android N adds the ability to record and playback content from Android TV input services via new recording APIs. Building on top of existing time-shifting APIs, TV input services can control what channel data can be recorded, how recorded sessions are saved, and manage user interaction with recorded content.</p>
+<p>For more information, see <a href="http://developer.android.com/preview/features/tv-recording-api.html" target="_blank" rel="external">Android TV Recording APIs</a>.</p>
+<h2 id="Android-for-Work"><a href="#Android-for-Work" class="headerlink" title="Android for Work"></a>Android for Work</h2><hr>
+<p>Android for Work adds many new features and APIs for devices running Android N. Some highlights are below — for a complete list of changes, see <a href="http://developer.android.com/preview/features/afw.html" target="_blank" rel="external">Android for Work Updates</a>.</p>
+<h3 id="Work-profile-security-challenge"><a href="#Work-profile-security-challenge" class="headerlink" title="Work profile security challenge"></a>Work profile security challenge</h3><p>Profile owners targeting the N SDK can specify a separate security challenge for apps running in the work profile. The work challenge is shown when a user attempts to open any work apps. Successful completion of the security challenge unlocks the work profile and decrypts it if necessary. For profile owners,<code>ACTION_SET_NEW_PASSWORD</code> prompts the user to set a work challenge, and<code>ACTION_SET_NEW_PARENT_PROFILE_PASSWORD</code> prompts the user to set a device lock.</p>
+<p>Profile owners can set distinct passcode policies for the work challenge (such as how long the PIN needs to be, or whether a fingerprint can be used to unlock the profile) using the <code>setPasswordQuality()</code>,<code>setPasswordMinimumLength()</code> and related methods. The profile owner can also set the device lock using the<code>DevicePolicyManager</code> instance returned by the new <code>getParentProfileInstance()</code> method. Additionally, profile owners can customize the credentials screen for the work challenge using the new<code>setOrganizationColor()</code> and <code>setOrganizationName()</code> methods.</p>
+<h3 id="Turn-off-work"><a href="#Turn-off-work" class="headerlink" title="Turn off work"></a>Turn off work</h3><p>On a device with a work profile, users can toggle work mode. When work mode is off the managed user is temporarily shut down, which disables work profile apps, background sync, and notifications. This includes the profile owner application. When work mode is off, the system displays a persistent status icon to remind the user that they can’t launch work apps. The launcher indicates that work apps and widgets are not accessible.</p>
+<h3 id="Always-on-VPN"><a href="#Always-on-VPN" class="headerlink" title="Always on VPN"></a>Always on VPN</h3><p>Device owners and profile owners can ensure that work apps always connect through a specified VPN. The system automatically starts that VPN after the device boots.</p>
+<p>New <code>DevicePolicyManager</code> methods are <code>setAlwaysOnVpnPackage()</code> and <code>getAlwaysOnVpnPackage()</code>.</p>
+<p>Because VPN services can be bound directly by the system without app interaction, VPN clients need to handle new entry points for Always on VPN. As before, services are indicated to the system by an intent filter matching action <code>android.net.VpnService</code>.</p>
+<p>Users can also manually set Always on VPN clients that implement <code>VPNService</code> methods in the primary user using <strong>Settings&gt;More&gt;Vpn</strong>.</p>
+<h3 id="Customized-provisioning"><a href="#Customized-provisioning" class="headerlink" title="Customized provisioning"></a>Customized provisioning</h3><p>An application can customize the profile owner and device owner provisioning flows with corporate colors and logos. <code>DevicePolicyManager.EXTRA_PROVISIONING_MAIN_COLOR</code> customizes flow color.<code>DevicePolicyManager.EXTRA_PROVISIONING_LOGO_URI</code> customizes the flow with a corporate logo.</p>
+<h2 id="Accessibility-enhancements"><a href="#Accessibility-enhancements" class="headerlink" title="Accessibility enhancements"></a>Accessibility enhancements</h2><hr>
+<p>Android N now offers Vision Settings directly on the Welcome screen for new device setup. This makes it much easier for users to discover and configure accessibility features on their devices, including magnification gesture, font size, display size, and TalkBack.</p>
+<p>With these accessibility features getting more prominent placement, your users are more likely to try your app with them enabled. Make sure you test your apps early with these settings enabled. You can enable them from Settings &gt; Accessibility.</p>
+<p>Also in Android N, accessibility services can now help users with motor impairments to touch the screen. The new API allows building services with features such as face-tracking, eye-tracking, point scanning, and so on, to meet the needs of those users.</p>
+<p>For more information, see <code>android.accessibilityservice.GestureDescription</code> in the downloadable <a href="http://developer.android.com/preview/setup-sdk.html#docs-dl" target="_blank" rel="external">API Reference</a>.</p>
+<h2 id="Direct-boot"><a href="#Direct-boot" class="headerlink" title="Direct boot"></a>Direct boot</h2><hr>
+<p>Direct boot improves device startup times and lets registered apps have limited functionality even after an unexpected reboot. For example, if an encrypted device reboots while the user is sleeping, registered alarms, messages and incoming calls can now continue notify the user as normal. This also means accessibility services can also be available immediately after a restart.</p>
+<p>Direct boot takes advantage of file based encryption in Android N to enable fine grained encryption policies for both system and app data. The system uses a device-encrypted store for select system data and explicitly registered app data. By default a credential-encrypted store is used for all other system data, user data, apps, and app data.</p>
+<p>At boot, the system starts in a restricted mode with access to device-encrypted data only, and without general access to apps or data. If you have components that you want to run in this mode, you can register them by setting a flag in the manifest. After restart, the system activates registered components by broadcasting the<code>LOCKED_BOOT_COMPLETED</code> intent. The system ensures registered device-encrypted app data is available before unlock. All other data is unavailable until the User confirms their lock screen credentials to decrypt it.</p>
+<p>For more information, see </p>
+<p>Direct Boot</p>
+<p>.</p>
+<h2 id="Key-Attestation"><a href="#Key-Attestation" class="headerlink" title="Key Attestation"></a>Key Attestation</h2><hr>
+<p>Hardware-backed keystores provide a much safer method to create, store, and use cryptographic keys on Android devices. They protect keys from the Linux kernel, potential Android vulnerabilities, and extraction from rooted devices.</p>
+<p>To make it easier and more secure to use hardware-backed keystores, Android N introduces Key Attestation. Apps and off-devices can use Key Attestation to strongly determine whether an RSA or EC key pair is hardware-backed, what the properties of the key pair are, and what constraints are applied to its usage and validity.</p>
+<p>Apps and off-device services can request information about a key pair through an X.509 attestation certificate which must be signed by a valid attestation key. The attestation key is an ECDSA signing key which is injected into the device’s hardware-backed keystore at the factory. Therefore, an attestation certificate signed by a valid attestation key confirms the existence of a hardware-backed keystore, along with details of key pairs in that keystore.</p>
+<p>To ensure that the device is using a secure, official Android factory image, Key Attestation requires that the device <a href="https://source.android.com/security/verifiedboot/verified-boot.html#bootloader_requirements" target="_blank" rel="external">bootloader</a> provide the following information to the <a href="https://source.android.com/security/trusty/index.html" target="_blank" rel="external">Trusted Execution Environment (TEE)</a>:</p>
+<ul>
+<li>The OS version and patch level installed on the device</li>
+<li>The <a href="https://source.android.com/security/verifiedboot/index.html" target="_blank" rel="external">Verified Boot</a> public key and lock status</li>
+</ul>
+<p>For more information about the hardware-backed keystore feature, see the guide for <a href="https://source.android.com/security/keystore/" target="_blank" rel="external">Hardware-backed Keystore</a>.</p>
+<p>In addition to Key Attestation, Android N also introduces fingerprint-bound keys that are not revoked on fingerprint enrollment.</p>
+<h2 id="Network-Security-Config"><a href="#Network-Security-Config" class="headerlink" title="Network Security Config"></a>Network Security Config</h2><hr>
+<p>In Android N, apps can customize the behavior of their secure (HTTPS, TLS) connections safely, without any code modification, by using the declarative <em>Network Security Config</em> instead of using the conventional error-prone programmatic APIs (e.g. X509TrustManager).</p>
+<p>Supported features:</p>
+<ul>
+<li><strong>Custom trust anchors.</strong> Lets an application customize which Certificate Authorities (CA) are trusted for its secure connections. For example, trusting particular self-signed certificates or a restricted set of public CAs.</li>
+<li><strong>Debug-only overrides.</strong> Lets an application developer safely debug secure connections of their application without added risk to the installed base.</li>
+<li><strong>Cleartext traffic opt-out.</strong> Lets an application protect itself from accidental usage of cleartext traffic.</li>
+<li><strong>Certificate pinning.</strong> An advanced feature that lets an application limit which server keys are trusted for secure connections.</li>
+</ul>
+<p>For more information, see <a href="http://developer.android.com/preview/features/security-config.html" target="_blank" rel="external">Network Security Config</a>.</p>
+<h2 id="Default-Trusted-Certificate-Authority"><a href="#Default-Trusted-Certificate-Authority" class="headerlink" title="Default Trusted Certificate Authority"></a>Default Trusted Certificate Authority</h2><hr>
+<p>By default, apps that target Android N only trust system-provided certificates and no longer trust user-added Certificate Authorities (CA). Apps targeting Android N that wish to trust user-added CAs should use the <a href="http://developer.android.com/preview/features/security-config.html" target="_blank" rel="external">Network Security Config</a> to specify how user CAs should be trusted.</p>
+<h2 id="APK-signature-scheme-v2"><a href="#APK-signature-scheme-v2" class="headerlink" title="APK signature scheme v2"></a>APK signature scheme v2</h2><hr>
+<p>The PackageManager class now supports verifying apps using the APK signature scheme v2. The APK signature scheme v2 is a whole-file signature scheme that significantly improves verification speed and strengthens integrity guarantees by detecting any unauthorized changes to APK files.</p>
+<p>To maintain backward-compatibility, an APK must be signed with the v1 signature scheme (JAR signature scheme) before being signed with the v2 signature scheme. With the v2 signature scheme, verification fails if you sign the APK with an additional certificate after signing with the v2 scheme.</p>
+<p>APK signature scheme v2 support will be available later in the N Developer Preview.</p>
+<h2 id="Scoped-directory-access"><a href="#Scoped-directory-access" class="headerlink" title="Scoped directory access"></a>Scoped directory access</h2><hr>
+<p>In Android N, apps can use new APIs to request access to specific <a href="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal" target="_blank" rel="external">external storage</a> directories, including directories on removable media such as SD cards. The new APIs greatly simplify how your application accesses standard external storage directories, such as the <code>Pictures</code> directory. Apps like photo apps can use these APIs instead of using <code>READ_EXTERNAL_STORAGE</code>, which grants access to all storage directories, or the Storage Access Framework, which makes the user navigate to the directory.</p>
+<p>Additionally, the new APIs simplify the steps a user takes to grant external storage access to your app. When you use the new APIs, the system uses a simple permissions UI that clearly details what directory the application is requesting access to.</p>
+<p>For more information, see the <a href="http://developer.android.com/preview/features/scoped-folder-access.html" target="_blank" rel="external">Scoped Directory Access</a> developer documentation.</p>
+<h2 id="Launcher-shortcuts"><a href="#Launcher-shortcuts" class="headerlink" title="Launcher shortcuts"></a>Launcher shortcuts</h2><hr>
+<p>Android N allows apps to define action-specific shortcuts which can be displayed in the launcher. These<em>launcher shortcuts</em> let your users quickly start common or recommended tasks within your app. Each shortcut contains an <a href="http://developer.android.com/guide/components/intents-filters.html" target="_blank" rel="external">intent</a>, which links the shortcut to a specific action in your app. Examples of these actions include:</p>
+<ul>
+<li>Navigating users to a particular location in a mapping app.</li>
+<li>Sending messages to a friend in a communication app.</li>
+<li>Playing the next episode of a TV show in a media app.</li>
+<li>Loading the last save point in a gaming app.</li>
+</ul>
+<p>Your app can create up to five <em>dynamic shortcuts</em>. When users perform a gesture over your app’s launcher icon, these shortcuts appear. By dragging the shortcuts onto the launcher, users can make persistent copies of the shortcuts, called <em>pinned shortcuts</em>. Users can create an unlimited number of pinned shortcuts for each app.</p>
+<p><strong>Note:</strong> Although other apps can’t access your shortcut data, the launcher <strong>does</strong> have access to this data. Therefore, the shortcuts you create should conceal sensitive user information.</p>
+<p>You can use this command to view your app’s shortcuts:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell dumpsys shortcut</span><br></pre></td></tr></table></figure>
+<p>To update all shortcuts and to delete dynamic shortcuts, use the appropriate methods that the Launcher Shortcut API provides. For more details about this API, see <code>android.content.pm.ShortcutManager</code> in the downloadable <a href="http://developer.android.com/preview/setup-sdk.html#docs-dl" target="_blank" rel="external">API Reference</a>.</p>
+<h2 id="Print-Service-Enhancements"><a href="#Print-Service-Enhancements" class="headerlink" title="Print Service Enhancements"></a>Print Service Enhancements</h2><hr>
+<p>In Android N, print service developers can now surface additional information about individual printers and print jobs.</p>
+<p>When listing individual printers, a print service can now set per-printer icons in two ways:</p>
+<ul>
+<li>You can set an icon from a resource ID by calling <code>PrinterInfo.Builder.setResourceIconId()</code></li>
+<li>You can show an icon from the network by calling <code>PrinterInfo.Builder.setHasCustomPrinterIcon()</code>, and setting a callback for when the icon is requested using<code>android.printservice.PrinterDiscoverySession.onRequestCustomPrinterIcon()</code></li>
+</ul>
+<p>In addition, you can provide a per-printer activity to display additional information by calling<code>PrinterInfo.Builder.setInfoIntent()</code>.</p>
+<p>You can indicate the progress and status of print jobs in the print job notification by calling<code>android.printservice.PrintJob.setProgress()</code> and <code>android.printservice.PrintJob.setStatus()</code>, respectively.</p>
+<p>For more information about these methods, see the downloadable <a href="http://developer.android.com/preview/setup-sdk.html#docs-dl" target="_blank" rel="external">API Reference</a>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/04/28/Android-N/" data-id="cir4fk00f0004n4fjtxs15y08" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android-new-future/">android new future</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/28/Andorid-statusbar-text-color/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Andorid statusbar text color
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/28/this-is-test-post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">this is test post</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsock-install/">shadowsock install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 15px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/27/xcode在非Application路径安装插件/">xcode在非Application路径安装插件</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/26/kind-of-probrems/">kind of probrems</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/23/weak-end-at-this-time/">weak end at this time</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/19/断网两天记住！/">断网两天,记住！</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/周末总结/">周末总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 TestSmirk 京ICP备16028080号<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

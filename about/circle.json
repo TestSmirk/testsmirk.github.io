@@ -1,0 +1,1 @@
+{"machine":{"node":{"version":6}},"test":{"override":["npm run lint -s","npm run test -s"]}}
