@@ -705,108 +705,7 @@
         // Prevent default keydown action when one of supported key is pressed.
         document.addEventListener( "keydown", function( event ) {
             if ( event.keyCode === 9 ||
-               ( event.keyCode >= 32 && event.keyCode <= 34 ) ||
-               ( event.keyCode >= 37 && event.keyCode <= 40 ) ) {
-                event.preventDefault();
-            }
-        }, false );
-
-        // Trigger impress action (next or prev) on keyup.
-
-        // Supported keys are:
-        // [space] - quite common in presentation software to move forward
-        // [up] [right] / [down] [left] - again common and natural addition,
-        // [pgdown] / [pgup] - often triggered by remote controllers,
-        // [tab] - this one is quite controversial, but the reason it ended up on
-        //   this list is quite an interesting story... Remember that strange part
-        //   in the impress.js code where window is scrolled to 0,0 on every presentation
-        //   step, because sometimes browser scrolls viewport because of the focused element?
-        //   Well, the [tab] key by default navigates around focusable elements, so clicking
-        //   it very often caused scrolling to focused element and breaking impress.js
-        //   positioning. I didn't want to just prevent this default action, so I used [tab]
-        //   as another way to moving to next step... And yes, I know that for the sake of
-        //   consistency I should add [shift+tab] as opposite action...
-        document.addEventListener( "keyup", function( event ) {
-
-            if ( event.shiftKey || event.altKey || event.ctrlKey || event.metaKey ) {
-                return;
-            }
-
-            if ( event.keyCode === 9 ||
-               ( event.keyCode >= 32 && event.keyCode <= 34 ) ||
-               ( event.keyCode >= 37 && event.keyCode <= 40 ) ) {
-                switch ( event.keyCode ) {
-                    case 33: // Page up
-                    case 37: // Left
-                    case 38: // Up
-                             api.prev();
-                             break;
-                    case 9:  // Tab
-                    case 32: // Space
-                    case 34: // Page down
-                    case 39: // Right
-                    case 40: // Down
-                             api.next();
-                             break;
-                }
-
-                event.preventDefault();
-            }
-        }, false );
-
-        // Delegated handler for clicking on the links to presentation steps
-        document.addEventListener( "click", function( event ) {
-
-            // Event delegation with "bubbling"
-            // Check if event target (or any of its parents is a link)
-            var target = event.target;
-            while ( ( target.tagName !== "A" ) &&
-                    ( target !== document.documentElement ) ) {
-                target = target.parentNode;
-            }
-
-            if ( target.tagName === "A" ) {
-                var href = target.getAttribute( "href" );
-
-                // If it's a link to presentation step, target this step
-                if ( href && href[ 0 ] === "#" ) {
-                    target = document.getElementById( href.slice( 1 ) );
-                }
-            }
-
-            if ( api.goto( target ) ) {
-                event.stopImmediatePropagation();
-                event.preventDefault();
-            }
-        }, false );
-
-        // Delegated handler for clicking on step elements
-        document.addEventListener( "click", function( event ) {
-            var target = event.target;
-
-            // Find closest step element that is not active
-            while ( !( target.classList.contains( "step" ) &&
-                      !target.classList.contains( "active" ) ) &&
-                      ( target !== document.documentElement ) ) {
-                target = target.parentNode;
-            }
-
-            if ( api.goto( target ) ) {
-                event.preventDefault();
-            }
-        }, false );
-
-        // Touch handler to detect taps on the left and right side of the screen
-        // based on awesome work of @hakimel: https://github.com/hakimel/reveal.js
-        document.addEventListener( "touchstart", function( event ) {
-            if ( event.touches.length === 1 ) {
-                var x = event.touches[ 0 ].clientX,
-                    width = window.innerWidth * 0.3,
-                    result = null;
-
-                if ( x < width ) {
-                    result = api.prev();
-                } else if ( x > window.innerWidth - width ) {
+               ( event.keyCode >= 32 && event.keyCode <= 34="" )="" ||="" (="" event.keycode="">= 37 && event.keyCode <= 9="" 40="" )="" {="" event.preventdefault();="" }="" },="" false="" );="" trigger="" impress="" action="" (next="" or="" prev)="" on="" keyup.="" supported="" keys="" are:="" [space]="" -="" quite="" common="" in="" presentation="" software="" to="" move="" forward="" [up]="" [right]="" [down]="" [left]="" again="" and="" natural="" addition,="" [pgdown]="" [pgup]="" often="" triggered="" by="" remote="" controllers,="" [tab]="" this="" one="" is="" controversial,="" but="" the="" reason="" it="" ended="" up="" list="" an="" interesting="" story...="" remember="" that="" strange="" part="" impress.js="" code="" where="" window="" scrolled="" 0,0="" every="" step,="" because="" sometimes="" browser="" scrolls="" viewport="" of="" focused="" element?="" well,="" key="" default navigates="" around="" focusable="" elements,="" so="" clicking="" very="" caused="" scrolling="" element="" breaking="" positioning.="" i="" didn't="" want="" just="" prevent="" action,="" used="" as="" another="" way="" moving="" next="" step...="" yes,="" know="" for="" sake="" consistency="" should="" add="" [shift+tab]="" opposite="" action...="" document.addeventlistener(="" "keyup",="" function(="" event="" if="" (="" event.shiftkey="" ||="" event.altkey="" event.ctrlkey="" event.metakey="" return;="" event.keycode="==">= 32 && event.keyCode <= 34="" )="" ||="" (="" event.keycode="">= 37 && event.keyCode <= 0="" 1="" 40="" )="" {="" switch="" (="" event.keycode="" case="" 33:="" page="" up="" 37:="" left="" 38:="" api.prev();="" break;="" 9:="" tab="" 32:="" space="" 34:="" down="" 39:="" right="" 40:="" api.next();="" }="" event.preventdefault();="" },="" false="" );="" delegated="" handler="" for="" clicking="" on="" the="" links="" to="" presentation="" steps="" document.addeventlistener(="" "click",="" function(="" event="" delegation="" with="" "bubbling"="" check="" if="" target="" (or="" any="" of="" its="" parents="" is="" a="" link)="" var="" while="" target.tagname="" !="=" "a"="" &&="" document.documentelement="" href="target.getAttribute(" "href"="" it's="" link="" step,="" this="" step="" href[="" ]="==" "#"="" href.slice(="" api.goto(="" event.stopimmediatepropagation();="" elements="" find="" closest="" element="" that="" not="" active="" !(="" target.classlist.contains(="" "step"="" !target.classlist.contains(="" "active"="" touch="" detect="" taps="" and="" side="" screen="" based="" awesome="" work="" @hakimel:="" https:="" github.com="" hakimel="" reveal.js="" "touchstart",="" event.touches.length="==" x="event.touches[" ].clientx,="" width="window.innerWidth" *="" 0.3,="" result="null;" <="" else=""> window.innerWidth - width ) {
                     result = api.next();
                 }
 
@@ -834,3 +733,4 @@
 //
 // I've learnt a lot when building impress.js and I hope this code and comments
 // will help somebody learn at least some part of it.
+</=></=></=></=>
