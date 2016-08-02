@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Arkiv | Full stack</title>
+  <title>iOS UIPangestureRecognizer | Full stack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今日事今日毕">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Full stack">
-<meta property="og:url" content="http://testsmirk.com/archives/page/4/index.html">
+  <meta name="description" content="iOS 手指滑动的一些思路结果跑偏到动画上了.
+view 跟随手指移动的代码如下:
+
+生成 UIPangestureRecongnizer 然后 addTarget 或者直接在构造函数中加入target 第一个参数是self,第二个是selector方法.
+
+然后通过view 的addGestureRecognizer 把刚才生成的手势加入进去.
+
+在selector方法中执行想要的动作.片段代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS UIPangestureRecognizer">
+<meta property="og:url" content="http://testsmirk.com/2016/08/03/iOS-UIPangestureRecognizer/index.html">
 <meta property="og:site_name" content="Full stack">
-<meta property="og:description" content="今日事今日毕">
+<meta property="og:description" content="iOS 手指滑动的一些思路结果跑偏到动画上了.
+view 跟随手指移动的代码如下:
+
+生成 UIPangestureRecongnizer 然后 addTarget 或者直接在构造函数中加入target 第一个参数是self,第二个是selector方法.
+
+然后通过view 的addGestureRecognizer 把刚才生成的手势加入进去.
+
+在selector方法中执行想要的动作.片段代码">
+<meta property="og:updated_time" content="2016-08-02T17:39:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Full stack">
-<meta name="twitter:description" content="今日事今日毕">
+<meta name="twitter:title" content="iOS UIPangestureRecognizer">
+<meta name="twitter:description" content="iOS 手指滑动的一些思路结果跑偏到动画上了.
+view 跟随手指移动的代码如下:
+
+生成 UIPangestureRecongnizer 然后 addTarget 或者直接在构造函数中加入target 第一个参数是self,第二个是selector方法.
+
+然后通过view 的addGestureRecognizer 把刚才生成的手势加入进去.
+
+在selector方法中执行想要的动作.片段代码">
   
     <link rel="alternate" href="/atom.xml" title="Full stack" type="application/atom+xml">
   
@@ -66,177 +88,66 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/05/livestream/" class="archive-article-date">
-  <time datetime="2016-05-05T10:58:29.000Z" itemprop="datePublished">May 5</time>
+        <section id="main"><article id="post-iOS-UIPangestureRecognizer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/03/iOS-UIPangestureRecognizer/" class="article-date">
+  <time datetime="2016-08-02T17:32:01.000Z" itemprop="datePublished">2016-08-03</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/05/livestream/">livestream</a>
+    <h1 class="article-title" itemprop="name">
+      iOS UIPangestureRecognizer
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/05/04/first-day-in-this-company/" class="archive-article-date">
-  <time datetime="2016-05-04T11:17:12.000Z" itemprop="datePublished">May 4</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/04/first-day-in-this-company/">first day in this company</a>
-    </h1>
-  
+        <p>iOS 手指滑动的一些思路结果跑偏到动画上了.</p>
+<p>view 跟随手指移动的代码如下:</p>
+<ol>
+<li><p>生成 <code>UIPangestureRecongnizer</code> 然后 addTarget 或者直接在构造函数中加入target 第一个参数是self,第二个是selector方法.</p>
+</li>
+<li><p>然后通过view 的addGestureRecognizer 把刚才生成的手势加入进去.</p>
+</li>
+<li><p>在selector方法中执行想要的动作.片段代码如下:  </p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CGPoint point = [event translationInView:self.view3];</span><br><span class="line">self.view3.transform = CGAffineTransformTranslate(self.view3.transform, point.x, point.y);</span><br><span class="line"> [pan setTranslation:CGPointZero inView:self.view3];</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/TestSmirk/iOSUIPanGestureRecognizer" target="_blank" rel="external">点此Demo地址</a> </p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/29/last-working-day/" class="archive-article-date">
-  <time datetime="2016-04-29T14:28:01.000Z" itemprop="datePublished">Apr 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/29/last-working-day/">last working day</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/29/recent/" class="archive-article-date">
-  <time datetime="2016-04-29T13:03:29.000Z" itemprop="datePublished">Apr 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/08/03/iOS-UIPangestureRecognizer/" data-id="cirdr2lxo000g1w767u3up4z2" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/29/recent/">recent</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/29/learn-python/" class="archive-article-date">
-  <time datetime="2016-04-29T01:58:15.000Z" itemprop="datePublished">Apr 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/29/learn-python/">learn python</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/27/xcode在非Application路径安装插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">xcode在非Application路径安装插件</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/28/Andorid-statusbar-text-color/" class="archive-article-date">
-  <time datetime="2016-04-28T08:35:31.000Z" itemprop="datePublished">Apr 28</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/28/Andorid-statusbar-text-color/">Andorid statusbar text color</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/28/Android-N/" class="archive-article-date">
-  <time datetime="2016-04-28T04:39:51.000Z" itemprop="datePublished">Apr 28</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/28/Android-N/">Android N</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/28/this-is-test-post/" class="archive-article-date">
-  <time datetime="2016-04-28T04:33:13.000Z" itemprop="datePublished">Apr 28</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/28/this-is-test-post/">this is test post</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; __('prev')</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
 </section>
         
           <aside id="sidebar">
