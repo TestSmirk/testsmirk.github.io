@@ -3,17 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Full stack</title>
+  <title>pod probrems | Full stack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今日事今日毕">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Full stack">
-<meta property="og:url" content="http://testsmirk.com/archives/2016/index.html">
+  <meta name="description" content="安装pod提示:
+12ERROR:  Error installing cocoapods:	activesupport requires Ruby version &amp;gt;= 2.2.2
+解决 
+1[sudo] gem install activesupport -v 4.2.6
+然后再sued install pod
+su..
+1234from /Library/Ruby/Gems/2.0.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pod probrems">
+<meta property="og:url" content="http://testsmirk.com/2016/08/03/pod-probrems/index.html">
 <meta property="og:site_name" content="Full stack">
-<meta property="og:description" content="今日事今日毕">
+<meta property="og:description" content="安装pod提示:
+12ERROR:  Error installing cocoapods:	activesupport requires Ruby version &amp;gt;= 2.2.2
+解决 
+1[sudo] gem install activesupport -v 4.2.6
+然后再sued install pod
+su..
+1234from /Library/Ruby/Gems/2.0.0">
+<meta property="og:updated_time" content="2016-08-02T18:47:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Full stack">
-<meta name="twitter:description" content="今日事今日毕">
+<meta name="twitter:title" content="pod probrems">
+<meta name="twitter:description" content="安装pod提示:
+12ERROR:  Error installing cocoapods:	activesupport requires Ruby version &amp;gt;= 2.2.2
+解决 
+1[sudo] gem install activesupport -v 4.2.6
+然后再sued install pod
+su..
+1234from /Library/Ruby/Gems/2.0.0">
   
     <link rel="alternate" href="/atom.xml" title="Full stack" type="application/atom+xml">
   
@@ -66,215 +85,62 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/03/pod-probrems/" class="archive-article-date">
-  <time datetime="2016-08-02T18:05:18.000Z" itemprop="datePublished">Aug 3</time>
+        <section id="main"><article id="post-pod-probrems" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/03/pod-probrems/" class="article-date">
+  <time datetime="2016-08-02T18:05:18.000Z" itemprop="datePublished">2016-08-03</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/03/pod-probrems/">pod probrems</a>
+    <h1 class="article-title" itemprop="name">
+      pod probrems
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/03/iOS-UIPangestureRecognizer/" class="archive-article-date">
-  <time datetime="2016-08-02T17:32:01.000Z" itemprop="datePublished">Aug 3</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/03/iOS-UIPangestureRecognizer/">iOS UIPangestureRecognizer</a>
-    </h1>
-  
+        <p>安装pod提示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR:  Error installing cocoapods:</span><br><span class="line">	activesupport requires Ruby version &gt;= 2.2.2</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/CocoaPods/CocoaPods/issues/4711" target="_blank" rel="external">解决</a> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sudo] gem install activesupport -v 4.2.6</span><br></pre></td></tr></table></figure>
+<p>然后再sued install pod</p>
+<p>su..</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from /Library/Ruby/Gems/2.0.0/gems/cocoapods-1.0.1/lib/cocoapods/command.rb:47:in `run&apos;</span><br><span class="line">	from /Library/Ruby/Gems/2.0.0/gems/cocoapods-1.0.1/bin/pod:55:in `&lt;top (required)&gt;&apos;</span><br><span class="line">	from /usr/local/bin/pod:22:in `load&apos;</span><br><span class="line">	from /usr/local/bin/pod:22:in `&lt;main&gt;&apos;</span><br></pre></td></tr></table></figure>
+<p>这是因为不能用root 运行pod setup…</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/27/xcode在非Application路径安装插件/" class="archive-article-date">
-  <time datetime="2016-07-27T11:12:36.000Z" itemprop="datePublished">Jul 27</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/27/xcode在非Application路径安装插件/">xcode在非Application路径安装插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/26/kind-of-probrems/" class="archive-article-date">
-  <time datetime="2016-07-25T16:23:07.000Z" itemprop="datePublished">Jul 26</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/08/03/pod-probrems/" data-id="cirds4izl001ngh76smliupgz" class="article-share-link">Partager</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/26/kind-of-probrems/">kind of probrems</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/23/weak-end-at-this-time/" class="archive-article-date">
-  <time datetime="2016-07-23T12:35:28.000Z" itemprop="datePublished">Jul 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/23/weak-end-at-this-time/">weak end at this time</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-pod/">iOS pod</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/03/iOS-UIPangestureRecognizer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">iOS UIPangestureRecognizer</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/19/断网两天记住！/" class="archive-article-date">
-  <time datetime="2016-07-19T06:56:43.000Z" itemprop="datePublished">Jul 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/19/断网两天记住！/">断网两天,记住！</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/14/周末总结/" class="archive-article-date">
-  <time datetime="2016-07-14T07:26:54.000Z" itemprop="datePublished">Jul 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/14/周末总结/">周末总结</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/14/reset/" class="archive-article-date">
-  <time datetime="2016-07-14T01:23:19.000Z" itemprop="datePublished">Jul 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/14/reset/">reset</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/13/iOS-someday/" class="archive-article-date">
-  <time datetime="2016-07-13T07:53:04.000Z" itemprop="datePublished">Jul 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/13/iOS-someday/">iOS someday</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/07/iOS-3/" class="archive-article-date">
-  <time datetime="2016-07-07T02:08:57.000Z" itemprop="datePublished">Jul 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/07/iOS-3/">iOS 3</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="page-number" href="/archives/2016/page/3/">3</a><a class="page-number" href="/archives/2016/page/4/">4</a><a class="extend next" rel="next" href="/archives/2016/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">
