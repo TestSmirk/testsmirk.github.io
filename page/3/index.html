@@ -68,6 +68,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-review-java" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/review-java/" class="article-date">
+  <time datetime="2016-06-20T06:22:43.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/review-java/">review java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复习了一下Collection</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Smirk</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Stack&lt;String&gt; stack = <span class="keyword">new</span> Stack&lt;String&gt;();</span><br><span class="line">		stack.push(<span class="string">"this is bottom"</span>);</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.push(<span class="string">"second"</span>);</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.push(<span class="string">"third"</span>);</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.pop();</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.pop();</span><br><span class="line">		print(stack);</span><br><span class="line">		stack.pop();</span><br><span class="line">		print(stack);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Stack&lt;String&gt; stack)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(stack.isEmpty())</span><br><span class="line">			System.out.println(<span class="string">"this stack is empty"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.printf(<span class="string">"%s TOP\n"</span>,stack);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>print<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[this is bottom] TOP</span><br><span class="line">[this is bottom, second] TOP</span><br><span class="line">[this is bottom, second, third] TOP</span><br><span class="line">[this is bottom, second] TOP</span><br><span class="line">[this is bottom] TOP</span><br><span class="line">this stack is empty</span><br></pre></td></tr></table></figure></p>
+<p>浮躁的我们每天去接入不同的第三方,而忽略了本质的细节.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/06/20/review-java/" data-id="ciroxjsn0001gjv76whjqodwo" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-Collections/">java Collections</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-how-fix-65536-error-in-Eclipse" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/17/how-fix-65536-error-in-Eclipse/" class="article-date">
@@ -108,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/17/how-fix-65536-error-in-Eclipse/" data-id="cirds4iys000kgh76wqodxmda" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/17/how-fix-65536-error-in-Eclipse/" data-id="ciroxjsm9000ljv76f9wl8erk" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li></ul>
@@ -147,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/06/cent-os-换-ubuntu/" data-id="cirds4iy60004gh76imse1q2o" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/06/cent-os-换-ubuntu/" data-id="ciroxjslh0001jv76mf7r25xq" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
@@ -187,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/06/ubuntu-开启root并打开ssh远程访问/" data-id="cirds4j060027gh7605bo4852" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/06/ubuntu-开启root并打开ssh远程访问/" data-id="ciroxjsnc001wjv76qp6n142b" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
@@ -226,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/04/转-eclipse到androidstudio吐血步骤/" data-id="cirds4j0d002jgh76ryp62wbn" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/04/转-eclipse到androidstudio吐血步骤/" data-id="ciroxjsnh0027jv76frv52qeh" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li></ul>
@@ -265,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/05/30/Android-SwipeRefreshLayout-Costom/" data-id="cirds4iyi000bgh76g5ciqthe" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/05/30/Android-SwipeRefreshLayout-Costom/" data-id="ciroxjslw0009jv76go10rz5x" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li></ul>
@@ -316,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/05/27/lanmp-环境/" data-id="cirds4izn001qgh76ed8ntg5s" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/05/27/lanmp-环境/" data-id="ciroxjsmu0016jv76fn5qno2m" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li></ul>
@@ -366,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/05/26/tencent-互动直播接入/" data-id="cirds4j020024gh76i6kmg6yo" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/05/26/tencent-互动直播接入/" data-id="ciroxjsn5001mjv76db7at2ap" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li></ul>
@@ -406,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/05/25/自动部署-webhook/" data-id="cirds4j67002zgh76apz1kio7" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/05/25/自动部署-webhook/" data-id="ciroxjsng0023jv765whczrpd" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webhook/">webhook</a></li></ul>
@@ -455,54 +497,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/05/23/https-配置流程/" data-id="cirds4iyo000hgh7607fvh40k" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/05/23/https-配置流程/" data-id="ciroxjsmd000pjv767aqu967f" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/https-nginx/">https nginx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-live" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/11/live/" class="article-date">
-  <time datetime="2016-05-11T10:38:09.000Z" itemprop="datePublished">2016-05-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/11/live/">live</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在接入腾讯云的互动直播sdk,好多包,不同的登陆方式,弄的头大了.<br>同步执行的还有找国内的vps,备案https,shadowsock加速,teamviewer什么的,学生机不好找.只能老老实实的放在github上面吧.精力都放在正事上.<br>互动直播我的理解是群视频,</p>
-<ol>
-<li>是每个人最多只能产生两个画面,一个是自己,一个是主播.</li>
-<li>大家都能说话</li>
-<li>有送花点赞的功能.<br>sdk中的jar包太多.弄了好久都没用弄明白账号独立模式是什么流程.<br>直播到是挺简单的.<br>移动端这边只要找一个可以播放flv或者HLS的控件,<br>腾讯那边提供一个url,然后可以用window或者移动端推流,不过HLS格式延时太高,flv的话web上延时低于移动端的WebView.<br>近期找到大陆内的vps并且备案,还有把互动直播这边弄好.好久没写代码了手痒.  粘一个判断网络可用的代码吧<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public static int getNetWorkType(Context context) &#123;</span><br><span class="line">        ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);</span><br><span class="line">        NetworkInfo networkInfo = manager.getActiveNetworkInfo();</span><br><span class="line"></span><br><span class="line">        if (networkInfo != null &amp;&amp; networkInfo.isConnected()) &#123;</span><br><span class="line">            String type = networkInfo.getTypeName();</span><br><span class="line"></span><br><span class="line">            if (type.equalsIgnoreCase(&quot;WIFI&quot;)) &#123;</span><br><span class="line">                return AVConstants.NETTYPE_WIFI;</span><br><span class="line">            &#125; else if (type.equalsIgnoreCase(&quot;MOBILE&quot;)) &#123;</span><br><span class="line">                NetworkInfo mobileInfo = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);</span><br><span class="line">                if (mobileInfo != null) &#123;</span><br><span class="line">                    switch (mobileInfo.getType()) &#123;</span><br><span class="line">                        case ConnectivityManager.TYPE_MOBILE:// 手机网络</span><br><span class="line">                            switch (mobileInfo.getSubtype()) &#123;</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_UMTS:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_EVDO_0:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_EVDO_A:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_HSDPA:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_HSUPA:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_HSPA:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_EVDO_B:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_EHRPD:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_HSPAP:</span><br><span class="line">                                    return AVConstants.NETTYPE_3G;</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_CDMA:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_GPRS:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_EDGE:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_1xRTT:</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_IDEN:</span><br><span class="line">                                    return AVConstants.NETTYPE_2G;</span><br><span class="line">                                case TelephonyManager.NETWORK_TYPE_LTE:</span><br><span class="line">                                    return AVConstants.NETTYPE_4G;</span><br><span class="line">                                default:</span><br><span class="line">                                    return AVConstants.NETTYPE_NONE;</span><br><span class="line">                            &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return AVConstants.NETTYPE_NONE;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/05/11/live/" data-id="cirds4izt001ugh76qvxyzo1f" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/live/">live</a></li></ul>
 
     </footer>
   </div>
@@ -527,7 +525,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS-pod/">iOS pod</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsock-install/">shadowsock install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS-pod/">iOS pod</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsock-install/">shadowsock install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
     </div>
   </div>
 
@@ -537,7 +535,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-pod/" style="font-size: 10px;">iOS pod</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 15px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
+      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-MVP/" style="font-size: 10px;">Android MVP</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-pod/" style="font-size: 10px;">iOS pod</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 15px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
     </div>
   </div>
 
@@ -559,6 +557,10 @@
       <ul>
         
           <li>
+            <a href="/2016/08/10/MVP的理解/">MVP的理解</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/03/pod-probrems/">pod probrems</a>
           </li>
         
@@ -572,10 +574,6 @@
         
           <li>
             <a href="/2016/07/26/kind-of-probrems/">kind of probrems</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/23/weak-end-at-this-time/">weak end at this time</a>
           </li>
         
       </ul>
