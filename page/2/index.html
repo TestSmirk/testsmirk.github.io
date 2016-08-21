@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://testsmirk.com"></form>
@@ -67,6 +67,95 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-周末总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/周末总结/" class="article-date">
+  <time datetime="2016-07-14T07:26:54.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/14/周末总结/">周末总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iOS的单例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//Singleton.h</span><br><span class="line">@interface Singleton : NSObject</span><br><span class="line">  + (Singleton *) instance;</span><br><span class="line">@property (nonatomic,strong) NSString *singletonData;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//Singleton.m</span><br><span class="line">#import &quot;Singleton.h&quot;</span><br><span class="line">@implementation Singleton</span><br><span class="line">@synthesize singletonData = _singletonData;</span><br><span class="line">static Singleton *instance =nil;</span><br><span class="line">+ (Singleton *) instance&#123;</span><br><span class="line">  static dispatch_once_t once;</span><br><span class="line">  dispatch_once(&amp;once,^&#123;</span><br><span class="line">  instance = [[self alloc] init];</span><br><span class="line">&#125;);</span><br><span class="line">  return instance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中 <code>static Singleton *instance</code> 为静态变量 ,类方法为 <code>+ (Singleton *) instance</code></p>
+<p>instance 方法采用了 GCD(Grand Central Dispatch)技术,这是一种基于C语言的多线程访问技术,在上述代码中dispatch_once函数就是由GCD提供的.它只执行一次,</p>
+<p><code>stringByAddingPercentEscapesUsingEncoding</code> 转换为 url编码.</p>
+<p>delegate:</p>
+<p>首先声明一个如下.h文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@protocol PhilosopherDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">@required</span><br><span class="line">-(void) sleep;</span><br><span class="line">-(void) eat;</span><br><span class="line">-(void) work;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>然后声明两个 相互依赖的.h.m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;PhilosopherDelegate.h&quot;</span><br><span class="line">@interface Philosopher : NSObject</span><br><span class="line">&#123;</span><br><span class="line">    NSTimer *timer;</span><br><span class="line">    int count;</span><br><span class="line">&#125;</span><br><span class="line">@property (nonatomic,weak) id&lt;PhilosopherDelegate&gt; delegate;</span><br><span class="line">-(void) start;</span><br><span class="line">-(void) handle;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;Philosopher.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation Philosopher</span><br><span class="line">@synthesize delegate;</span><br><span class="line">-(void) start&#123;</span><br><span class="line">    count =0;</span><br><span class="line">    timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(handle) userInfo:nil repeats:YES];</span><br><span class="line">&#125;</span><br><span class="line">-(void)handle&#123;</span><br><span class="line">    switch (count) &#123;</span><br><span class="line">        case 0:</span><br><span class="line">            [self.delegate sleep];</span><br><span class="line">            count++;</span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        case 1:</span><br><span class="line">            [self.delegate eat];</span><br><span class="line">            count++;</span><br><span class="line">            break;</span><br><span class="line">        case 2:</span><br><span class="line">            [self.delegate work];</span><br><span class="line">            [timer invalidate];</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>然后再<code>ViewController</code> 中import,初始化上面相互依赖的.h文件</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line">#import &quot;Philosopher.h&quot;</span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">    Philosopher *obj = [[Philosopher alloc]init];</span><br><span class="line">    obj.delegate = self;</span><br><span class="line">    [obj start];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)didReceiveMemoryWarning &#123;</span><br><span class="line">    [super didReceiveMemoryWarning];</span><br><span class="line">    // Dispose of any resources that can be recreated.</span><br><span class="line">&#125;</span><br><span class="line">-(void) sleep&#123;</span><br><span class="line">    NSLog(@&quot;sleep&quot;);</span><br><span class="line">&#125;</span><br><span class="line">-(void) eat&#123;</span><br><span class="line">    NSLog(@&quot;eat&quot;);</span><br><span class="line">&#125;</span><br><span class="line">-(void) work&#123;</span><br><span class="line">    NSLog(@&quot;work&quot;);</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/07/14/周末总结/" data-id="cis4nnejs0032n8fjmuusqu9r" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-reset" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/reset/" class="article-date">
+  <time datetime="2016-07-14T01:23:19.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/14/reset/">reset</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://testsmirk.com/2016/07/14/reset/" data-id="cis4nneib001en8fj9u76m1ec" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-iOS-someday" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -121,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/13/iOS-someday/" data-id="cirr9aygx000xp0fjnvikljtr" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/07/13/iOS-someday/" data-id="cis4nnehq000qn8fjc2abncdp" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -174,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/07/iOS-3/" data-id="cirr9aygx000rp0fjurljytv9" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/07/07/iOS-3/" data-id="cis4nnehk000jn8fjhiy6uj6w" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -213,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/06/second-day-iOS/" data-id="cirr9ayhk001jp0fj4c2f9msl" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/07/06/second-day-iOS/" data-id="cis4nneid001fn8fjq773tohn" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -254,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/07/05/iOS-first-day/" data-id="cirr9aygx000tp0fj4ufir38t" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/07/05/iOS-first-day/" data-id="cis4nnehm000nn8fjmxt5p431" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
@@ -305,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/30/MVP/" data-id="cirr9ayg20005p0fj1z80yl6e" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/30/MVP/" data-id="cis4nnegx0001n8fj25ck83em" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li></ul>
@@ -344,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/29/html5/" data-id="cirr9aygi000pp0fj742lqxsn" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/29/html5/" data-id="cis4nnehi000hn8fj2ypvo09c" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
@@ -393,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/28/javascript-whatever-day/" data-id="cirr9aygx0010p0fjdk0rktmj" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/28/javascript-whatever-day/" data-id="cis4nnehw000wn8fjbb1iw8dc" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li></ul>
@@ -433,97 +522,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/27/javascript-function-and-variable/" data-id="cirr9aygx000up0fjnm8mjjlt" class="article-share-link">Partager</a>
+      <a data-url="http://testsmirk.com/2016/06/27/javascript-function-and-variable/" data-id="cis4nnehv000un8fj6pexjeov" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-javascript-day" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/25/javascript-day/" class="article-date">
-  <time datetime="2016-06-25T06:25:06.000Z" itemprop="datePublished">2016-06-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/25/javascript-day/">javascript day</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>高阶函数即:一个函数接受另一个函数作为参数</p>
-<p>sample:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y,f</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> f(x)+f(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>add函数中可以传入函数f,此时<code>add()</code>函数称之为高阶函数.</p>
-<ul>
-<li><code>map()</code>函数为javascript中数组的高阶函数,map中可以传函数.还可以传包装类(Java里的.在这我不知道叫啥..)</li>
-<li><code>reduce()</code>她也是高阶函数可以传入当前指针,和后一个指针的参数.可以达成累加的效果</li>
-</ul>
-<p>看到这里的时候我发现javascript和python真的好像.站在Java的角度去看他俩.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/25/javascript-day/" data-id="cirr9aygx000yp0fj9903ubtn" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="&#39;html5-day" class="article article-type-&#39;html5" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/20/day/" class="article-date">
-  <time datetime="2016-06-20T10:19:37.000Z" itemprop="datePublished">2016-06-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/20/day/">day</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>蓄谋好久要了解html5一直都没有腾出时间,(懒)<br>今天看的html引用css使用通配符html代码:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> &gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Smirk's WebSite<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"main.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">name</span>=<span class="string">"tuna"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">name</span>=<span class="string">"sss1111"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">name</span>=<span class="string">"smirk"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>css如下:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[name$="11"]</span>&#123;<span class="attribute">color</span>:blue;&#125;<span class="comment">/* ^代表 只要是name的value开始都匹配 $代表 只要是name的value在end都匹配 * 代表无论在任何位置 只要包含都匹配 */</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/06/20/day/" data-id="cirr9aygi000hp0fjlur7gt44" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
 
     </footer>
   </div>
@@ -546,9 +548,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git大小写/">git大小写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS-pod/">iOS pod</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsock-install/">shadowsock install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ddcc-me/">ddcc.me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git大小写/">git大小写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS-pod/">iOS pod</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsock-install/">shadowsock install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
     </div>
   </div>
 
@@ -556,16 +558,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-MVP/" style="font-size: 10px;">Android MVP</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/git大小写/" style="font-size: 10px;">git大小写</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-pod/" style="font-size: 10px;">iOS pod</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 15px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
+      <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-MVP/" style="font-size: 10px;">Android MVP</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/ddcc-me/" style="font-size: 10px;">ddcc.me</a> <a href="/tags/git大小写/" style="font-size: 10px;">git大小写</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-pod/" style="font-size: 10px;">iOS pod</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 15px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
     </div>
@@ -575,9 +577,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/21/内容转移/">内容转移</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/21/data/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2016/08/12/git大小写不敏感/">git大小写不敏感</a>
@@ -589,14 +599,6 @@
         
           <li>
             <a href="/2016/08/03/pod-probrems/">pod probrems</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/03/iOS-UIPangestureRecognizer/">iOS UIPangestureRecognizer</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/27/xcode在非Application路径安装插件/">xcode在非Application路径安装插件</a>
           </li>
         
       </ul>
@@ -612,7 +614,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 TestSmirk 京ICP备16028080号<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
