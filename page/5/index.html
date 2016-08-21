@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://testsmirk.com"></form>
@@ -67,49 +67,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-Andorid-statusbar-text-color" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/28/Andorid-statusbar-text-color/" class="article-date">
-  <time datetime="2016-04-28T08:35:31.000Z" itemprop="datePublished">2016-04-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/28/Andorid-statusbar-text-color/">Andorid statusbar text color</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>6.0之前没有改变状态栏字体颜色的方法,国产手机小米魅族有对应的api4.4之后都可以改变字体颜色.</p>
-<p>刚才无意间看到QQ邮箱的App,状态栏字体是黑色的,就突然想到,去stackoverflow上看了一下,遇到<a href="http://stackoverflow.com/questions/27888102/how-to-change-statusbar-text-color-to-dark-on-android-4-4" target="_blank" rel="external">这个人</a>看到最底下的sorry for my poor English 我一股同病相怜的心情用上心头..<br>最后改变文字颜色好像只能在style-v23 中加入<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"statusBarStyle"</span> <span class="attr">parent</span>=<span class="string">"@android:style/Theme.DeviceDefault.Light"</span>&gt;</span><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:statusBarColor"</span>&gt;</span>@color/status_bar_color<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowLightStatusBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>小米的话是有自己提供的方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">setTranslucentStatus</span><span class="params">(<span class="keyword">boolean</span> on)</span> </span>&#123;</span><br><span class="line">       Window win = getWindow();</span><br><span class="line">       WindowManager.LayoutParams winParams = win.getAttributes();</span><br><span class="line">       <span class="keyword">final</span> <span class="keyword">int</span> bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;</span><br><span class="line">       <span class="keyword">if</span> (on) &#123;</span><br><span class="line">           winParams.flags |= bits;</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           winParams.flags &amp;= ~bits;</span><br><span class="line">       &#125;</span><br><span class="line">       win.setAttributes(winParams);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setStatusBarDarkMode</span><span class="params">(<span class="keyword">boolean</span> darkmode, Activity activity)</span> </span>&#123;</span><br><span class="line">       Class&lt;? extends Window&gt; clazz = activity.getWindow().getClass();</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="keyword">int</span> darkModeFlag = <span class="number">0</span>;</span><br><span class="line">           Class&lt;?&gt; layoutParams = Class.forName(<span class="string">"android.view.MiuiWindowManager$LayoutParams"</span>);</span><br><span class="line">           Field field = layoutParams.getField(<span class="string">"EXTRA_FLAG_STATUS_BAR_DARK_MODE"</span>);</span><br><span class="line">           darkModeFlag = field.getInt(layoutParams);</span><br><span class="line">           Method extraFlagField = clazz.getMethod(<span class="string">"setExtraFlags"</span>, <span class="keyword">int</span>.class, <span class="keyword">int</span>.class);</span><br><span class="line">           extraFlagField.invoke(activity.getWindow(), darkmode ? darkModeFlag : <span class="number">0</span>, darkModeFlag);</span><br><span class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p>魅族也有自己的方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">boolean</span> result = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (window != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            WindowManager.LayoutParams lp = window.getAttributes();</span><br><span class="line">            Field darkFlag = WindowManager.LayoutParams.class.getDeclaredField(<span class="string">"MEIZU_FLAG_DARK_STATUS_BAR_ICON"</span>);</span><br><span class="line">            Field meizuFlags = WindowManager.LayoutParams.class.getDeclaredField(<span class="string">"meizuFlags"</span>);</span><br><span class="line">            darkFlag.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">            meizuFlags.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">int</span> bit = darkFlag.getInt(<span class="keyword">null</span>);</span><br><span class="line">            <span class="keyword">int</span> value = meizuFlags.getInt(lp);</span><br><span class="line">            <span class="keyword">if</span> (dark) &#123;</span><br><span class="line">                value |= bit;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                value &amp;= ~bit;</span><br><span class="line">            &#125;</span><br><span class="line">            meizuFlags.setInt(lp, value);</span><br><span class="line">            window.setAttributes(lp);</span><br><span class="line">            result = <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            Log.e(<span class="string">"MeiZu"</span>, <span class="string">"setStatusBarDarkIcon: failed"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/04/28/Andorid-statusbar-text-color/" data-id="cis4nneh10003n8fji7k0d18a" class="article-share-link">Delen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-Android-N" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -326,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/04/28/Android-N/" data-id="cis4nnegt0000n8fj0rvdw88a" class="article-share-link">Delen</a>
+      <a data-url="http://testsmirk.com/2016/04/28/Android-N/" data-id="cis4nnegt0000n8fj0rvdw88a" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android-new-future/">android new future</a></li></ul>
@@ -366,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://testsmirk.com/2016/04/28/this-is-test-post/" data-id="cis4nnej3002dn8fj4h3i7mft" class="article-share-link">Delen</a>
+      <a data-url="http://testsmirk.com/2016/04/28/this-is-test-post/" data-id="cis4nnej3002dn8fj4h3i7mft" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -392,7 +349,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/65536error-eclipse/">65536error eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-CustomView-SwipeRefreshLayout/">Android CustomView SwipeRefreshLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP/">MVP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Status-Bar-text-color/">Status Bar text color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-new-future/">android new future</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat-小红点/">chat 小红点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/company-share/">company share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ddcc-me/">ddcc.me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git大小写/">git大小写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https-nginx/">https nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS-pod/">iOS pod</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Collections/">java Collections</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-learn/">javascript learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lanp-lamp/">lanp lamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsock-install/">shadowsock install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webhook/">webhook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode-iOS/">xcode iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作总结/">工作总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯互动直播/">腾讯互动直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶函数-Higher-order-function/">高阶函数 Higher-order function</a></li></ul>
     </div>
@@ -402,7 +359,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/65536error-eclipse/" style="font-size: 10px;">65536error eclipse</a> <a href="/tags/Android-CustomView-SwipeRefreshLayout/" style="font-size: 10px;">Android CustomView SwipeRefreshLayout</a> <a href="/tags/Android-MVP/" style="font-size: 10px;">Android MVP</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/Status-Bar-text-color/" style="font-size: 10px;">Status Bar text color</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/android-new-future/" style="font-size: 10px;">android new future</a> <a href="/tags/chat-小红点/" style="font-size: 10px;">chat 小红点</a> <a href="/tags/company-share/" style="font-size: 10px;">company share</a> <a href="/tags/ddcc-me/" style="font-size: 10px;">ddcc.me</a> <a href="/tags/git大小写/" style="font-size: 10px;">git大小写</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/https-nginx/" style="font-size: 10px;">https nginx</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-pod/" style="font-size: 10px;">iOS pod</a> <a href="/tags/java-Collections/" style="font-size: 10px;">java Collections</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-learn/" style="font-size: 10px;">javascript learn</a> <a href="/tags/lanp-lamp/" style="font-size: 10px;">lanp lamp</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsock-install/" style="font-size: 10px;">shadowsock install</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/webhook/" style="font-size: 10px;">webhook</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a> <a href="/tags/xcode-iOS/" style="font-size: 15px;">xcode iOS</a> <a href="/tags/工作总结/" style="font-size: 10px;">工作总结</a> <a href="/tags/腾讯互动直播/" style="font-size: 10px;">腾讯互动直播</a> <a href="/tags/高阶函数-Higher-order-function/" style="font-size: 10px;">高阶函数 Higher-order function</a>
     </div>
@@ -411,7 +368,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
     </div>
@@ -421,16 +378,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
             <a href="/2016/08/21/内容转移/">内容转移</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/21/data/">(no title)</a>
           </li>
         
           <li>
@@ -443,6 +396,10 @@
         
           <li>
             <a href="/2016/08/03/pod-probrems/">pod probrems</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/03/iOS-UIPangestureRecognizer/">iOS UIPangestureRecognizer</a>
           </li>
         
       </ul>
@@ -458,7 +415,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 TestSmirk 京ICP备16028080号<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
